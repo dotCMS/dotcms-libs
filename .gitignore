@@ -1,0 +1,22 @@
+# config/log files   #
+######################
+*.log
+.classpath
+.settings/*
+.project
+.idea/
+*.iml
+*.ipr
+*.iws
+
+_original
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+# Build #
+######################
+build/
