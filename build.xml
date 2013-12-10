@@ -39,7 +39,7 @@
 
             <fileset dir="${basedir}">
 
-                <include name="**/*.jar"/>
+                <include name="*.jar"/>
 
                 <!--dotcms jars-->
                 <exclude name="${dotcms.jar}"/>
@@ -51,8 +51,8 @@
 
                 <!--We can NOT alter these jars manifest-->
                 <exclude name="jamm-0.2.5.jar"/>
-                <exclude name="**/org.apache.felix.*.jar"/>
-                <exclude name="**/felix-4.2.1.jar"/>
+                <exclude name="org.apache.felix.*.jar"/>
+                <exclude name="felix-4.2.1.jar"/>
                 <!--We can NOT alter these jars manifest-->
 
                 <!--We CAN repackage them but applying special rules-->
@@ -63,8 +63,8 @@
                 <!--We CAN repackage them but applying special rules-->
 
                 <!--FIXME-->
-                <exclude name="**/quartz-all-1.8.6.jar"/>
-                <exclude name="**/org.springframework*.jar"/>
+                <exclude name="quartz-all-1.8.6.jar"/>
+                <exclude name="org.springframework*.jar"/>
                 <!--FIXME-->
             </fileset>
 
@@ -82,6 +82,7 @@
             <dependency path="${basedir}/tika-app-1.3.jar" generate="true" renameservices="true">
                 <ignore parentpackage="org.apache.commons.logging"/>
                 <ignore parentpackage="org.apache.log4j"/>
+                <ignore parentpackage="org.slf4j"/>
             </dependency>
 
             <!--++++++++++++++++++++++++++++++++++++++-->
