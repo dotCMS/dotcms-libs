@@ -9,6 +9,8 @@
     <property name="dotcms.jar" value="dotcms_2.6.jar"/>
     <property file="${dotcms.home}/src/com/liferay/portal/util/build.properties"/>
 
+    <property name="build.log" location="${basedir}/build.log"/>
+
     <path id="files-classpath">
         <fileset dir="${basedir}">
             <include name="jarjar-1.4.jar"/>
@@ -23,6 +25,9 @@
     </target>
 
     <target name="repackage" depends="clean">
+
+        <!--Records the output to a file-->
+        <record action="start" name="${build.log}" loglevel="verbose"/>
 
         <taskdef classname="com.tonicsystems.jarjar.PackagerTask" name="packagerTask">
             <classpath>
@@ -87,9 +92,25 @@
 
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--List of dependencies to check if there are dependencies to old packages -->
+            <dependency path="${basedir}/quartz-all-1.8.6.jar"/>
             <dependency path="${basedir}/ant-tooling.jar"/>
             <dependency path="${basedir}/packager-taks.jar"/>
             <dependency path="${basedir}/ee-af5bcc3ddb.jar"/>
+
+            <!--
+            Explicit naming rules for jars
+                How it works:
+                Example: all the jars that contains the word jersey (jersey-client-1.12.jar, jersey-core-1.12.jar, jersey-json-1.12.jar, etc)
+                will share the same repackaged name "jersey_1_12" resulting in com.dot.repackage.jersey_1_12.xxx.yyy
+                Required mostly when jars share the same packaging
+            -->
+            <namingrule pattern="jersey" replacement="jersey_1_12"/>
+            <namingrule pattern="lucene" replacement="elasticsearch"/>
+            <namingrule pattern="elasticsearch" replacement="elasticsearch"/>
+            <namingrule pattern="sslext" replacement="struts"/>
+            <namingrule pattern="milton" replacement="milton_1_8_1_4"/>
+            <namingrule pattern="xpp3" replacement="xmlpull"/>
+            <namingrule pattern="xmlpull" replacement="xmlpull"/>
 
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--++++++++++++++Resources+++++++++++++++-->
@@ -135,6 +156,8 @@
 
         </packagerTask>
 
+        <!--Records the output to a file-->
+        <record action="stop" name="${build.log}" loglevel="verbose"/>
     </target>
 
 </project>
