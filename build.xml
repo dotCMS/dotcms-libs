@@ -111,6 +111,7 @@
             <namingrule pattern="milton" replacement="milton_1_8_1_4"/>
             <namingrule pattern="xpp3" replacement="xmlpull"/>
             <namingrule pattern="xmlpull" replacement="xmlpull"/>
+            <namingrule pattern="json" replacement="json"/>
 
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--++++++++++++++Resources+++++++++++++++-->
