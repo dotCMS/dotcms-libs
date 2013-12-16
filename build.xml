@@ -40,7 +40,10 @@
                       dotVersion="${dotcms.release.version}"
                       renameservices="true"
                       multiplejars="true"
-                      jspFolder="${dotcms.dir}">
+                      jspFolder="${dotcms.dir}"
+                      verbose="false"
+                      skipdependenciesreplacement="false"
+                      skipjpsfiles="false">
 
             <fileset dir="${basedir}">
 
@@ -145,6 +148,14 @@
             <dependency path="${web-inf.dir}/tld/old/struts-nested.tld"/>
             <dependency path="${web-inf.dir}/tld/old/struts-template.tld"/>
             <dependency path="${web-inf.dir}/tld/old/struts-tiles.tld"/>
+            <dependency path="${web-inf.dir}/messages/Language.properties"/>
+            <dependency path="${web-inf.dir}/messages/Language_zh_CN.properties"/>
+            <dependency path="${web-inf.dir}/messages/Language_ru.properties"/>
+            <dependency path="${web-inf.dir}/messages/Language_nl.properties"/>
+            <dependency path="${web-inf.dir}/messages/Language_it.properties"/>
+            <dependency path="${web-inf.dir}/messages/Language_fr.properties"/>
+            <dependency path="${web-inf.dir}/messages/Language_es.properties"/>
+            <dependency path="${web-inf.dir}/messages/Language_de.properties"/>
 
             <dependency path="${dotcms.home}/libs/buildlibs/log4j.xml"/>
 
