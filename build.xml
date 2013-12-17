@@ -35,12 +35,12 @@
             </classpath>
         </taskdef>
 
-        <packagerTask outputFolder="${basedir}/build"
+        <packagerTask dotcmshome="${dotcms.home}"
+                      outputFolder="${basedir}/build"
                       dotcmsJar="${basedir}/${dotcms.jar}"
                       dotVersion="${dotcms.release.version}"
                       renameservices="true"
                       multiplejars="true"
-                      jspFolder="${dotcms.dir}"
                       verbose="false"
                       skipdependenciesreplacement="false"
                       skipjpsfiles="false">

@@ -315,7 +315,6 @@ org.apache.chemistry.cmissql.*-->com.dotcms.repackage.chemistry_commons_0_5_snap
 org.w3c.dom.events.*-->com.dotcms.repackage.tika_app_1_3.org.w3c.dom.events.@1
 org.hamcrest.*-->com.dotcms.repackage.mockito_all_1_9_5.org.hamcrest.@1
 schemaorg_apache_xmlbeans.element.URI_SHA_1_5AAF5BEFD4F30D215E94ED53118FE32C537C3B26.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.element.URI_SHA_1_5AAF5BEFD4F30D215E94ED53118FE32C537C3B26.@1
-conf.*-->com.dotcms.repackage.fop_0_20_1.conf.@1
 org.elasticsearch.common.netty.bootstrap.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.netty.bootstrap.@1
 org.apache.taglibs.standard.lang.jstl.parser.*-->com.dotcms.repackage.standard.org.apache.taglibs.standard.lang.jstl.parser.@1
 com.sun.syndication.io.impl.*-->com.dotcms.repackage.tika_app_1_3.com.sun.syndication.io.impl.@1
@@ -2125,7 +2124,6 @@ com.thoughtworks.xstream.core.*-->com.dotcms.repackage.xstream_1_4_4.com.thought
 org.apache.lucene.analysis.eu.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.analysis.eu.@1
 org.elasticsearch.common.util.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.util.@1
 org.apache.lucene.analysis.th.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.analysis.th.@1
-conf.*-->com.dotcms.repackage.plugin_com_dotcms_config.conf.@1
 net.sf.jasperreports.engine.export.draw.*-->com.dotcms.repackage.jasperreports_3_5_0.net.sf.jasperreports.engine.export.draw.@1
 org.codehaus.jackson.impl.*-->com.dotcms.repackage.jackson_core_asl_1_9_2.org.codehaus.jackson.impl.@1
 org.elasticsearch.common.netty.logging.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.netty.logging.@1
@@ -2562,7 +2560,6 @@ org.eclipse.mylyn.internal.wikitext.confluence.core.util.*-->com.dotcms.repackag
 hyph.*-->com.dotcms.repackage.fop_0_20_1.hyph.@1
 javax.servlet.jsp.jstl.core.*-->com.dotcms.repackage.jstl.javax.servlet.jsp.jstl.core.@1
 net.sf.jasperreports.engine.util.*-->com.dotcms.repackage.jasperreports_3_5_0.net.sf.jasperreports.engine.util.@1
-config.*-->com.dotcms.repackage.elasticsearch.config.@1
 org.codehaus.groovy.vmplugin.*-->com.dotcms.repackage.groovy_all_1_7_0.org.codehaus.groovy.vmplugin.@1
 org.apache.tools.ant.types.selectors.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.types.selectors.@1
 com.sun.jersey.client.osgi.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.client.osgi.@1
@@ -3667,7 +3664,6 @@ com.kenai.jffi.internal.*-->com.dotcms.repackage.jruby.com.kenai.jffi.internal.@
 org.elasticsearch.rest.action.admin.indices.alias.put.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.rest.action.admin.indices.alias.put.@1
 com.octo.captcha.engine.sound.utils.*-->com.dotcms.repackage.jcaptcha_mod.com.octo.captcha.engine.sound.utils.@1
 com.ibm.icu.impl.duration.impl.*-->com.dotcms.repackage.icu4j_4_0_1.com.ibm.icu.impl.duration.impl.@1
-images.*-->com.dotcms.repackage.myspell.images.@1
 org.jgroups.blocks.locking.*-->com.dotcms.repackage.jgroups_2_12_2_final.org.jgroups.blocks.locking.@1
 org.elasticsearch.rest.action.admin.indices.flush.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.rest.action.admin.indices.flush.@1
 resources.thredds.schemas.InvCatalog.*-->com.dotcms.repackage.tika_app_1_3.resources.thredds.schemas.InvCatalog.@1
