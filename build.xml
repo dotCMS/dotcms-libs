@@ -51,7 +51,7 @@
 
                 <!--dotcms jars-->
                 <exclude name="${dotcms.jar}"/>
-                <exclude name="ee-af5bcc3ddb.jar"/>
+                <exclude name="ee-6ecdf86f7f.jar"/>
                 <exclude name="ant-tooling.jar"/>
                 <exclude name="packager-taks.jar"/>
                 <exclude name="jarjar-1.4.jar"/>
@@ -98,7 +98,7 @@
             <dependency path="${basedir}/quartz-all-1.8.6.jar"/>
             <dependency path="${basedir}/ant-tooling.jar"/>
             <dependency path="${basedir}/packager-taks.jar"/>
-            <dependency path="${basedir}/ee-af5bcc3ddb.jar"/>
+            <dependency path="${basedir}/ee-6ecdf86f7f.jar"/>
 
             <!--
             Explicit naming rules for jars
@@ -115,6 +115,7 @@
             <namingrule pattern="xpp3" replacement="xmlpull"/>
             <namingrule pattern="xmlpull" replacement="xmlpull"/>
             <namingrule pattern="json" replacement="json"/>
+            <!--<namingrule pattern="springframework" replacement="springframework_3_1_0"/>-->
 
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--++++++++++++++Resources+++++++++++++++-->
