@@ -33,7 +33,6 @@ org.apache.hadoop.conf.*-->com.dotcms.repackage.hadoop_0_20_3_dev_core.org.apach
 com.octo.captcha.module.struts.*-->com.dotcms.repackage.jcaptcha_mod.com.octo.captcha.module.struts.@1
 org.apache.hadoop.mapreduce.lib.input.*-->com.dotcms.repackage.hadoop_0_20_3_dev_core.org.apache.hadoop.mapreduce.lib.input.@1
 com.oroad.stxx.transform.*-->com.dotcms.repackage.stxx.com.oroad.stxx.transform.@1
-org.apache.tools.ant.util.regexp.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.util.regexp.@1
 org.owasp.esapi.waf.internal.*-->com.dotcms.repackage.esapi_2_0_1.org.owasp.esapi.waf.internal.@1
 org.bouncycastle.jce.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.jce.@1
 org.bouncycastle.asn1.kisa.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.asn1.kisa.@1
@@ -44,8 +43,8 @@ schemaorg_apache_xmlbeans.attribute.http_3A_2F_2Fwww_2Ew3_2Eorg_2FXML_2F1998_2Fn
 org.apache.fop.tools.anttasks.*-->com.dotcms.repackage.fop_0_20_1.org.apache.fop.tools.anttasks.@1
 org.elasticsearch.script.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.script.@1
 org.apache.fontbox.ttf.*-->com.dotcms.repackage.tika_app_1_3.org.apache.fontbox.ttf.@1
-com.sun.jersey.localization.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.localization.@1
 javax.servlet.jsp.jstl.sql.*-->com.dotcms.repackage.jstl.javax.servlet.jsp.jstl.sql.@1
+com.sun.jersey.localization.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.localization.@1
 org.elasticsearch.common.joda.time.tz.data.Asia.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.joda.time.tz.data.Asia.@1
 org.elasticsearch.env.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.env.@1
 org.jfree.chart.resources.*-->com.dotcms.repackage.jfreechart_1_0_13.org.jfree.chart.resources.@1
@@ -65,7 +64,6 @@ org.elasticsearch.action.admin.indices.cache.clear.*-->com.dotcms.repackage.elas
 org.elasticsearch.cluster.node.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.cluster.node.@1
 org.apache.wml.dom.*-->com.dotcms.repackage.daisydiff.org.apache.wml.dom.@1
 net.sf.cglib.reflect.*-->com.dotcms.repackage.cglib_nodep_2_2.net.sf.cglib.reflect.@1
-org.apache.tools.ant.types.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.types.@1
 org.h2.engine.*-->com.dotcms.repackage.h2_1_3_169.org.h2.engine.@1
 org.directwebremoting.jms.*-->com.dotcms.repackage.dwr_3rc2modified.org.directwebremoting.jms.@1
 org.apache.poi.hwpf.model.types.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.hwpf.model.types.@1
@@ -123,7 +121,6 @@ schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xmlconfig.Extensi
 org.jboss.util.state.xml.*-->com.dotcms.repackage.jboss_common_core.org.jboss.util.state.xml.@1
 org.elasticsearch.search.query.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.search.query.@1
 org.jboss.cache.notifications.event.*-->com.dotcms.repackage.jbosscache_core.org.jboss.cache.notifications.event.@1
-org.apache.tools.ant.listener.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.listener.@1
 ucar.nc2.util.xml.*-->com.dotcms.repackage.tika_app_1_3.ucar.nc2.util.xml.@1
 org.joda.time.*-->com.dotcms.repackage.jruby.org.joda.time.@1
 org.apache.solr.handler.component.*-->com.dotcms.repackage.apache_solr_core_1_4_0.org.apache.solr.handler.component.@1
@@ -528,7 +525,6 @@ org.tuckey.web.filters.urlrewrite.sample.*-->com.dotcms.repackage.urlrewritefilt
 org.bouncycastle.voms.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.voms.@1
 org.openxmlformats.schemas.officeDocument.x2006.extendedProperties.impl.*-->com.dotcms.repackage.tika_app_1_3.org.openxmlformats.schemas.officeDocument.x2006.extendedProperties.impl.@1
 org.apache.poi.hssf.eventusermodel.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.hssf.eventusermodel.@1
-org.apache.tools.ant.loader.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.loader.@1
 org.elasticsearch.rest.action.admin.indices.mapping.get.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.rest.action.admin.indices.mapping.get.@1
 schemaorg_apache_xmlbeans.element.http_3A_2F_2Fwww_2Ew3_2Eorg_2F2001_2FXMLSchema.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.element.http_3A_2F_2Fwww_2Ew3_2Eorg_2F2001_2FXMLSchema.@1
 com.googlecode.mp4parser.boxes.ultraviolet.*-->com.dotcms.repackage.tika_app_1_3.com.googlecode.mp4parser.boxes.ultraviolet.@1
@@ -623,7 +619,6 @@ schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.SchemaD
 org.bouncycastle.asn1.gnu.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.asn1.gnu.@1
 org.apache.axiom.attachments.*-->com.dotcms.repackage.axiom_api_1_2_5.org.apache.axiom.attachments.@1
 org.apache.chemistry.opencmis.commons.impl.tube.*-->com.dotcms.repackage.chemistry_opencmis_commons_impl_0_8_0.org.apache.chemistry.opencmis.commons.impl.tube.@1
-org.apache.tools.ant.taskdefs.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.taskdefs.@1
 org.apache.lucene.analysis.fa.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.analysis.fa.@1
 net.sf.jasperreports.engine.fonts.*-->com.dotcms.repackage.jasperreports_3_5_0.net.sf.jasperreports.engine.fonts.@1
 ucar.nc2.iosp.fysat.*-->com.dotcms.repackage.tika_app_1_3.ucar.nc2.iosp.fysat.@1
@@ -650,8 +645,8 @@ org.codehaus.cargo.container.installer.*-->com.dotcms.repackage.cargo_core_uberj
 org.mockito.internal.util.collections.*-->com.dotcms.repackage.mockito_all_1_9_5.org.mockito.internal.util.collections.@1
 org.elasticsearch.index.indexing.slowlog.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.index.indexing.slowlog.@1
 org.apache.lucene.codecs.lucene42.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.codecs.lucene42.@1
-antlr.actions.cpp.*-->com.dotcms.repackage.antlr_3_1_2.antlr.actions.cpp.@1
 org.owasp.esapi.reference.crypto.*-->com.dotcms.repackage.esapi_2_0_1.org.owasp.esapi.reference.crypto.@1
+antlr.actions.cpp.*-->com.dotcms.repackage.antlr_3_1_2.antlr.actions.cpp.@1
 org.apache.commons.pool.impl.*-->com.dotcms.repackage.commons_pool_1_5_4.org.apache.commons.pool.impl.@1
 org.drools.leaps.*-->com.dotcms.repackage.drools_core_3_0_5.org.drools.leaps.@1
 org.drools.event.*-->com.dotcms.repackage.drools_core_3_0_5.org.drools.event.@1
@@ -683,7 +678,6 @@ org.directwebremoting.dojo.*-->com.dotcms.repackage.dwr_3rc2modified.org.directw
 de.l3s.boilerpipe.util.*-->com.dotcms.repackage.tika_app_1_3.de.l3s.boilerpipe.util.@1
 org.codehaus.groovy.ast.builder.*-->com.dotcms.repackage.groovy_all_1_7_0.org.codehaus.groovy.ast.builder.@1
 org.apache.tika.parser.image.xmp.*-->com.dotcms.repackage.tika_app_1_3.org.apache.tika.parser.image.xmp.@1
-org.apache.tools.ant.types.mappers.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.types.mappers.@1
 org.directwebremoting.json.*-->com.dotcms.repackage.dwr_3rc2modified.org.directwebremoting.json.@1
 org.eclipse.mylyn.internal.wikitext.mediawiki.core.token.*-->com.dotcms.repackage.org_eclipse_mylyn_wikitext_mediawiki_core_1_8_0_i20120918_1109.org.eclipse.mylyn.internal.wikitext.mediawiki.core.token.@1
 org.antlr.grammar.v2.*-->com.dotcms.repackage.antlr_3_1_2.org.antlr.grammar.v2.@1
@@ -702,8 +696,8 @@ org.elasticsearch.action.index.*-->com.dotcms.repackage.elasticsearch.org.elasti
 com.googlecode.mp4parser.boxes.basemediaformat.*-->com.dotcms.repackage.tika_app_1_3.com.googlecode.mp4parser.boxes.basemediaformat.@1
 org.h2.value.*-->com.dotcms.repackage.h2_1_3_169.org.h2.value.@1
 org.elasticsearch.common.joda.time.tz.data.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.joda.time.tz.data.@1
-com.sun.jersey.api.provider.jaxb.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.api.provider.jaxb.@1
 org.apache.hadoop.metrics.ganglia.*-->com.dotcms.repackage.hadoop_0_20_3_dev_core.org.apache.hadoop.metrics.ganglia.@1
+com.sun.jersey.api.provider.jaxb.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.api.provider.jaxb.@1
 org.exolab.castor.xml.schema.*-->com.dotcms.repackage.castor.org.exolab.castor.xml.schema.@1
 org.jruby.ext.zlib.*-->com.dotcms.repackage.jruby.org.jruby.ext.zlib.@1
 org.apache.commons.dbcp.datasources.*-->com.dotcms.repackage.commons_dbcp_1_3.org.apache.commons.dbcp.datasources.@1
@@ -788,9 +782,9 @@ org.codehaus.cargo.container.geronimo.deployable.*-->com.dotcms.repackage.cargo_
 com.sun.jersey.core.osgi.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.core.osgi.@1
 resources.schema.xhtml.notation.*-->com.dotcms.repackage.core_renderer_modified.resources.schema.xhtml.notation.@1
 org.elasticsearch.rest.action.admin.indices.mapping.put.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.rest.action.admin.indices.mapping.put.@1
+com.adobe.xmp.options.*-->com.dotcms.repackage.tika_app_1_3.com.adobe.xmp.options.@1
 org.apache.solr.util.plugin.*-->com.dotcms.repackage.apache_solr_core_1_4_0.org.apache.solr.util.plugin.@1
 org.apache.lucene.codecs.memory.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.codecs.memory.@1
-com.adobe.xmp.options.*-->com.dotcms.repackage.tika_app_1_3.com.adobe.xmp.options.@1
 org.eclipse.mylyn.internal.wikitext.core.validation.*-->com.dotcms.repackage.org_eclipse_mylyn_wikitext_core_1_8_0_i20120918_1109.org.eclipse.mylyn.internal.wikitext.core.validation.@1
 com.httpbridge.webproxy.ui.*-->com.dotcms.repackage.httpbridge.com.httpbridge.webproxy.ui.@1
 org.elasticsearch.common.cache.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.cache.@1
@@ -807,7 +801,6 @@ ucar.nc2.iosp.uf.*-->com.dotcms.repackage.tika_app_1_3.ucar.nc2.iosp.uf.@1
 org.apache.lucene.queryparser.flexible.core.processors.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.queryparser.flexible.core.processors.@1
 org.apache.poi.ss.util.cellwalk.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.ss.util.cellwalk.@1
 com.sun.jersey.spi.inject.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.spi.inject.@1
-org.apache.cactus.integration.ant.util.*-->com.dotcms.repackage.cactus_integration_ant_1_8_0.org.apache.cactus.integration.ant.util.@1
 org.apache.commons.compress.archivers.cpio.*-->com.dotcms.repackage.tika_app_1_3.org.apache.commons.compress.archivers.cpio.@1
 org.apache.commons.digester.*-->com.dotcms.repackage.commons_digester.org.apache.commons.digester.@1
 jxl.biff.formula.*-->com.dotcms.repackage.jxl_2_6.jxl.biff.formula.@1
@@ -974,7 +967,6 @@ groovyjarjarantlr.debug.*-->com.dotcms.repackage.groovy_all_1_7_0.groovyjarjaran
 org.codehaus.jackson.map.util.*-->com.dotcms.repackage.jackson_mapper_asl_1_9_2.org.codehaus.jackson.map.util.@1
 com.googlecode.mp4parser.boxes.*-->com.dotcms.repackage.tika_app_1_3.com.googlecode.mp4parser.boxes.@1
 jruby.java.core_ext.*-->com.dotcms.repackage.jruby.jruby.java.core_ext.@1
-org.apache.tools.ant.filters.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.filters.@1
 org.apache.axiom.om.util.*-->com.dotcms.repackage.axiom_api_1_2_5.org.apache.axiom.om.util.@1
 org.antlr.codegen.templates.Python.*-->com.dotcms.repackage.antlr_3_1_2.org.antlr.codegen.templates.Python.@1
 org.jgroups.tests.*-->com.dotcms.repackage.jgroups_2_12_2_final.org.jgroups.tests.@1
@@ -1067,7 +1059,6 @@ org.objenesis.instantiator.jrockit.*-->com.dotcms.repackage.mockito_all_1_9_5.or
 groovy.swing.impl.*-->com.dotcms.repackage.groovy_all_1_7_0.groovy.swing.impl.@1
 org.python.modules.sets.*-->com.dotcms.repackage.jython.org.python.modules.sets.@1
 jni.sparcv9-SunOS.*-->com.dotcms.repackage.jruby.jni.sparcv9-SunOS.@1
-org.apache.tools.ant.types.resources.selectors.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.types.resources.selectors.@1
 org.elasticsearch.common.trove.impl.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.trove.impl.@1
 org.openxmlformats.schemas.officeDocument.x2006.docPropsVTypes.*-->com.dotcms.repackage.tika_app_1_3.org.openxmlformats.schemas.officeDocument.x2006.docPropsVTypes.@1
 org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.impl.*-->com.dotcms.repackage.tika_app_1_3.org.openxmlformats.schemas.drawingml.x2006.spreadsheetDrawing.impl.@1
@@ -1131,7 +1122,6 @@ org.jgroups.protocols.pbcast.*-->com.dotcms.repackage.jgroups_2_12_2_final.org.j
 org.elasticsearch.common.lucene.search.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.lucene.search.@1
 jnr.ffi.provider.jffi.*-->com.dotcms.repackage.jruby.jnr.ffi.provider.jffi.@1
 com.werken.xpath.impl.*-->com.dotcms.repackage.werken_xpath_0_9_4.com.werken.xpath.impl.@1
-org.apache.tools.ant.util.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.util.@1
 schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.FullDerivationSet.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.FullDerivationSet.@1
 org.exolab.castor.dsml.jndi.*-->com.dotcms.repackage.castor.org.exolab.castor.dsml.jndi.@1
 org.bouncycastle.asn1.pkcs.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.asn1.pkcs.@1
@@ -1160,9 +1150,7 @@ com.octo.captcha.*-->com.dotcms.repackage.jcaptcha_mod.com.octo.captcha.@1
 org.elasticsearch.index.cache.filter.none.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.index.cache.filter.none.@1
 com.ettrema.http.*-->com.dotcms.repackage.milton_1_8_1_4.com.ettrema.http.@1
 org.apache.commons.beanutils.*-->com.dotcms.repackage.commons_beanutils.org.apache.commons.beanutils.@1
-org.apache.tools.ant.helper.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.helper.@1
 com.liferay.mail.util.*-->com.dotcms.repackage.mail_ejb.com.liferay.mail.util.@1
-org.apache.tools.ant.types.conditions.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.types.conditions.@1
 org.apache.pdfbox.filter.*-->com.dotcms.repackage.tika_app_1_3.org.apache.pdfbox.filter.@1
 org.apache.poi.hmef.extractor.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.hmef.extractor.@1
 schemaorg_apache_xmlbeans.type.http_3A_2F_2Fwww_2Ebea_2Ecom_2F2003_2F05_2Fxmlbean_2Fltgfmt.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.type.http_3A_2F_2Fwww_2Ebea_2Ecom_2F2003_2F05_2Fxmlbean_2Fltgfmt.@1
@@ -1200,7 +1188,6 @@ net.sf.cglib.asm.*-->com.dotcms.repackage.cglib_nodep_2_2.net.sf.cglib.asm.@1
 org.python.parser.ast.*-->com.dotcms.repackage.jython.org.python.parser.ast.@1
 org.apache.abdera.protocol.server.context.*-->com.dotcms.repackage.abdera_server_0_4_0_incubating.org.apache.abdera.protocol.server.context.@1
 antlr.collections.impl.*-->com.dotcms.repackage.antlr_3_1_2.antlr.collections.impl.@1
-org.apache.tools.ant.types.resources.comparators.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.types.resources.comparators.@1
 org.tuckey.web.filters.urlrewrite.json.*-->com.dotcms.repackage.urlrewritefilter_4_0_3.org.tuckey.web.filters.urlrewrite.json.@1
 org.apache.poi.poifs.filesystem.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.poifs.filesystem.@1
 org.jaxen.function.xslt.*-->com.dotcms.repackage.jaxen_1_1_3.org.jaxen.function.xslt.@1
@@ -1218,7 +1205,6 @@ schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.Annotat
 org.joni.constants.*-->com.dotcms.repackage.jruby.org.joni.constants.@1
 jxl.*-->com.dotcms.repackage.jxl_2_6.jxl.@1
 org.codehaus.jackson.map.deser.*-->com.dotcms.repackage.jackson_mapper_asl_1_9_2.org.codehaus.jackson.map.deser.@1
-org.codehaus.cargo.ant.*-->com.dotcms.repackage.cargo_ant_0_9.org.codehaus.cargo.ant.@1
 com.swabunga.spell.engine.*-->com.dotcms.repackage.jazzy_core.com.swabunga.spell.engine.@1
 org.apache.poi.hdgf.streams.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.hdgf.streams.@1
 com.octo.captcha.component.word.wordgenerator.*-->com.dotcms.repackage.jcaptcha_mod.com.octo.captcha.component.word.wordgenerator.@1
@@ -1295,7 +1281,6 @@ ucar.nc2.iosp.adde.*-->com.dotcms.repackage.tika_app_1_3.ucar.nc2.iosp.adde.@1
 org.jaxen.jdom.*-->com.dotcms.repackage.jaxen_1_1_3.org.jaxen.jdom.@1
 org.apache.struts.resources.*-->com.dotcms.repackage.struts.org.apache.struts.resources.@1
 com.drew.metadata.exif.*-->com.dotcms.repackage.tika_app_1_3.com.drew.metadata.exif.@1
-org.apache.tools.ant.taskdefs.compilers.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.taskdefs.compilers.@1
 net.sf.ehcache.constructs.blocking.*-->com.dotcms.repackage.ehcache_1_6_1.net.sf.ehcache.constructs.blocking.@1
 com.caucho.vfs.i18n.*-->com.dotcms.repackage.resin_util.com.caucho.vfs.i18n.@1
 org.apache.commons.lang.exception.*-->com.dotcms.repackage.commons_lang_2_4.org.apache.commons.lang.exception.@1
@@ -1346,9 +1331,9 @@ org.bouncycastle.asn1.util.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastl
 org.jruby.ext.thread.*-->com.dotcms.repackage.jruby.org.jruby.ext.thread.@1
 org.elasticsearch.common.inject.name.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.inject.name.@1
 groovy.ui.*-->com.dotcms.repackage.groovy_all_1_7_0.groovy.ui.@1
-org.apache.poi.common.usermodel.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.common.usermodel.@1
 com.novell.security.sasl.*-->com.dotcms.repackage.ldap.com.novell.security.sasl.@1
 com.octo.captcha.image.fisheye.*-->com.dotcms.repackage.jcaptcha_mod.com.octo.captcha.image.fisheye.@1
+org.apache.poi.common.usermodel.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.common.usermodel.@1
 org.elasticsearch.action.admin.indices.segments.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.action.admin.indices.segments.@1
 org.apache.xmlbeans.impl.piccolo.util.*-->com.dotcms.repackage.tika_app_1_3.org.apache.xmlbeans.impl.piccolo.util.@1
 org.owasp.esapi.waf.rules.*-->com.dotcms.repackage.esapi_2_0_1.org.owasp.esapi.waf.rules.@1
@@ -1410,7 +1395,6 @@ org.mockito.configuration.*-->com.dotcms.repackage.mockito_all_1_9_5.org.mockito
 com.caucho.quercus.lib.zip.*-->com.dotcms.repackage.quercus.com.caucho.quercus.lib.zip.@1
 org.apache.commons.fileupload.*-->com.dotcms.repackage.commons_fileupload_1_2.org.apache.commons.fileupload.@1
 org.openxmlformats.schemas.drawingml.x2006.picture.*-->com.dotcms.repackage.tika_app_1_3.org.openxmlformats.schemas.drawingml.x2006.picture.@1
-org.apache.tools.mail.*-->com.dotcms.repackage.myspell.org.apache.tools.mail.@1
 org.apache.commons.collections.iterators.*-->com.dotcms.repackage.commons_collections_3_2.org.apache.commons.collections.iterators.@1
 org.codehaus.cargo.container.internal.resources.geronimo1x.jetty.*-->com.dotcms.repackage.cargo_core_uberjar_0_9.org.codehaus.cargo.container.internal.resources.geronimo1x.jetty.@1
 com.octo.captcha.component.image.utils.*-->com.dotcms.repackage.jcaptcha_mod.com.octo.captcha.component.image.utils.@1
@@ -1492,7 +1476,6 @@ org.elasticsearch.search.internal.*-->com.dotcms.repackage.elasticsearch.org.ela
 org.codehaus.jackson.schema.*-->com.dotcms.repackage.jackson_mapper_asl_1_9_2.org.codehaus.jackson.schema.@1
 org.apache.lucene.queryparser.flexible.messages.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.queryparser.flexible.messages.@1
 com.octo.captcha.component.word.worddecorator.*-->com.dotcms.repackage.jcaptcha_mod.com.octo.captcha.component.word.worddecorator.@1
-org.apache.tools.ant.types.spi.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.types.spi.@1
 com.google.common.base.internal.*-->com.dotcms.repackage.guava_11_0_1.com.google.common.base.internal.@1
 org.apache.taglibs.standard.tag.rt.fmt.*-->com.dotcms.repackage.standard.org.apache.taglibs.standard.tag.rt.fmt.@1
 org.bouncycastle.asn1.eac.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.asn1.eac.@1
@@ -1522,9 +1505,9 @@ org.apache.taglibs.standard.*-->com.dotcms.repackage.standard.org.apache.taglibs
 org.eclipse.compare.internal.*-->com.dotcms.repackage.daisydiff.org.eclipse.compare.internal.@1
 net.sf.cglib.core.*-->com.dotcms.repackage.cglib_nodep_2_2.net.sf.cglib.core.@1
 thredds.cataloggen.datasetenhancer.*-->com.dotcms.repackage.tika_app_1_3.thredds.cataloggen.datasetenhancer.@1
-org.jgroups.demos.applets.*-->com.dotcms.repackage.jgroups_2_12_2_final.org.jgroups.demos.applets.@1
 org.h2.index.*-->com.dotcms.repackage.h2_1_3_169.org.h2.index.@1
 org.elasticsearch.index.cache.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.index.cache.@1
+org.jgroups.demos.applets.*-->com.dotcms.repackage.jgroups_2_12_2_final.org.jgroups.demos.applets.@1
 org.jfree.data.gantt.*-->com.dotcms.repackage.jfreechart_1_0_13.org.jfree.data.gantt.@1
 org.bouncycastle.crypto.paddings.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.crypto.paddings.@1
 org.mockito.internal.invocation.finder.*-->com.dotcms.repackage.mockito_all_1_9_5.org.mockito.internal.invocation.finder.@1
@@ -1604,7 +1587,6 @@ org.elasticsearch.index.store.ram.*-->com.dotcms.repackage.elasticsearch.org.ela
 org.h2.tools.*-->com.dotcms.repackage.h2_1_3_169.org.h2.tools.@1
 org.cyberneko.html.xercesbridge.*-->com.dotcms.repackage.nekohtml_1_9_17.org.cyberneko.html.xercesbridge.@1
 org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.*-->com.dotcms.repackage.tika_app_1_3.org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.@1
-org.apache.cactus.integration.ant.container.*-->com.dotcms.repackage.cactus_integration_ant_1_8_0.org.apache.cactus.integration.ant.container.@1
 org.apache.commons.configuration.beanutils.*-->com.dotcms.repackage.commons_configuration_1_0.org.apache.commons.configuration.beanutils.@1
 org.drools.decisiontable.model.*-->com.dotcms.repackage.drools_decisiontables_3_0_5.org.drools.decisiontable.model.@1
 de.l3s.boilerpipe.filters.heuristics.*-->com.dotcms.repackage.tika_app_1_3.de.l3s.boilerpipe.filters.heuristics.@1
@@ -1632,7 +1614,6 @@ org.jruby.org.objectweb.asm.tree.*-->com.dotcms.repackage.jruby.org.jruby.org.ob
 com.ibm.icu.impl.data.icudt40b.*-->com.dotcms.repackage.icu4j_4_0_1.com.ibm.icu.impl.data.icudt40b.@1
 org.codehaus.groovy.ant.*-->com.dotcms.repackage.groovy_all_1_7_0.org.codehaus.groovy.ant.@1
 com.sun.jersey.server.impl.uri.rules.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.server.impl.uri.rules.@1
-org.apache.tools.ant.taskdefs.email.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.taskdefs.email.@1
 org.apache.poi.xwpf.model.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.xwpf.model.@1
 org.elasticsearch.common.trove.list.array.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.trove.list.array.@1
 org.codehaus.cargo.module.webapp.*-->com.dotcms.repackage.cargo_core_uberjar_0_9.org.codehaus.cargo.module.webapp.@1
@@ -1684,8 +1665,8 @@ org.exolab.castor.xml.util.*-->com.dotcms.repackage.castor.org.exolab.castor.xml
 org.openxmlformats.schemas.drawingml.x2006.main.*-->com.dotcms.repackage.tika_app_1_3.org.openxmlformats.schemas.drawingml.x2006.main.@1
 org.elasticsearch.index.mapper.internal.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.index.mapper.internal.@1
 org.apache.http.impl.*-->com.dotcms.repackage.httpcore_4_2_2.org.apache.http.impl.@1
-org.elasticsearch.indices.memory.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.indices.memory.@1
 org.apache.lucene.analysis.fr.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.analysis.fr.@1
+org.elasticsearch.indices.memory.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.indices.memory.@1
 com.kenai.jffi.*-->com.dotcms.repackage.jruby.com.kenai.jffi.@1
 org.bouncycastle.jce.spec.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.jce.spec.@1
 org.apache.commons.codec.*-->com.dotcms.repackage.tika_app_1_3.org.apache.commons.codec.@1
@@ -1869,8 +1850,8 @@ org.elasticsearch.indices.*-->com.dotcms.repackage.elasticsearch.org.elasticsear
 org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.*-->com.dotcms.repackage.tika_app_1_3.org.apache.pdfbox.pdmodel.documentinterchange.logicalstructure.@1
 javatests.*-->com.dotcms.repackage.jython.javatests.@1
 org.jboss.cache.jmx.annotations.*-->com.dotcms.repackage.jbosscache_core.org.jboss.cache.jmx.annotations.@1
-org.elasticsearch.common.logging.slf4j.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.logging.slf4j.@1
 jnr.ffi.provider.jffi.platform.i386.openbsd.*-->com.dotcms.repackage.jruby.jnr.ffi.provider.jffi.platform.i386.openbsd.@1
+org.elasticsearch.common.logging.slf4j.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.logging.slf4j.@1
 org.apache.http.conn.util.*-->com.dotcms.repackage.httpclient_4_2_2.org.apache.http.conn.util.@1
 org.xhtmlrenderer.resource.*-->com.dotcms.repackage.core_renderer_modified.org.xhtmlrenderer.resource.@1
 thredds.catalog.util.*-->com.dotcms.repackage.tika_app_1_3.thredds.catalog.util.@1
@@ -1985,7 +1966,6 @@ org.elasticsearch.gateway.local.*-->com.dotcms.repackage.elasticsearch.org.elast
 org.apache.hadoop.hdfs.*-->com.dotcms.repackage.hadoop_0_20_3_dev_core.org.apache.hadoop.hdfs.@1
 org.jruby.ext.fiber.*-->com.dotcms.repackage.jruby.org.jruby.ext.fiber.@1
 org.apache.lucene.codecs.appending.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.codecs.appending.@1
-org.apache.tools.ant.types.selectors.modifiedselector.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.types.selectors.modifiedselector.@1
 org.apache.commons.dbcp.cpdsadapter.*-->com.dotcms.repackage.commons_dbcp_1_3.org.apache.commons.dbcp.cpdsadapter.@1
 license.*-->com.dotcms.repackage.tika_app_1_3.license.@1
 com.caucho.quercus.lib.curl.*-->com.dotcms.repackage.quercus.com.caucho.quercus.lib.curl.@1
@@ -2298,7 +2278,6 @@ groovyjarjarantlr.build.*-->com.dotcms.repackage.groovy_all_1_7_0.groovyjarjaran
 schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xmlconfig.ConfigDocument.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xmlconfig.ConfigDocument.@1
 org.apache.taglibs.standard.tag.common.xml.*-->com.dotcms.repackage.standard.org.apache.taglibs.standard.tag.common.xml.@1
 schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.WhiteSpaceDocument.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.WhiteSpaceDocument.@1
-org.apache.tools.ant.input.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.input.@1
 org.xhtmlrenderer.tool.*-->com.dotcms.repackage.core_renderer_modified.org.xhtmlrenderer.tool.@1
 org.jboss.cache.factories.*-->com.dotcms.repackage.jbosscache_core.org.jboss.cache.factories.@1
 wsdl.*-->com.dotcms.repackage.chemistry_opencmis_commons_impl_0_8_0.wsdl.@1
@@ -2334,7 +2313,6 @@ org.apache.poi.hsmf.dev.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.hsm
 org.elasticsearch.search.fetch.version.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.search.fetch.version.@1
 org.apache.xerces.jaxp.datatype.*-->com.dotcms.repackage.tika_app_1_3.org.apache.xerces.jaxp.datatype.@1
 net.sf.hibernate.tool.hbm2ddl.*-->com.dotcms.repackage.hibernate2.net.sf.hibernate.tool.hbm2ddl.@1
-org.apache.tools.ant.taskdefs.rmic.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.taskdefs.rmic.@1
 org.eclipse.mylyn.wikitext.core.util.anttask.*-->com.dotcms.repackage.org_eclipse_mylyn_wikitext_core_1_8_0_i20120918_1109.org.eclipse.mylyn.wikitext.core.util.anttask.@1
 org.apache.fop.image.*-->com.dotcms.repackage.fop_0_20_1.org.apache.fop.image.@1
 org.apache.commons.compress.compressors.pack200.*-->com.dotcms.repackage.tika_app_1_3.org.apache.commons.compress.compressors.pack200.@1
@@ -2425,8 +2403,8 @@ org.apache.pdfbox.pdmodel.text.*-->com.dotcms.repackage.tika_app_1_3.org.apache.
 org.joni.*-->com.dotcms.repackage.jruby.org.joni.@1
 org.bouncycastle.asn1.x509.sigi.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.asn1.x509.sigi.@1
 schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.UnionDocument.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.UnionDocument.@1
-org.eclipse.mylyn.internal.wikitext.confluence.core.phrase.*-->com.dotcms.repackage.org_eclipse_mylyn_wikitext_confluence_core_1_8_0_i20120918_1109.org.eclipse.mylyn.internal.wikitext.confluence.core.phrase.@1
 org.apache.wml.*-->com.dotcms.repackage.daisydiff.org.apache.wml.@1
+org.eclipse.mylyn.internal.wikitext.confluence.core.phrase.*-->com.dotcms.repackage.org_eclipse_mylyn_wikitext_confluence_core_1_8_0_i20120918_1109.org.eclipse.mylyn.internal.wikitext.confluence.core.phrase.@1
 groovyjarjarantlr.*-->com.dotcms.repackage.groovy_all_1_7_0.groovyjarjarantlr.@1
 com.sun.jersey.multipart.file.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.multipart.file.@1
 jnr.unixsocket.example.*-->com.dotcms.repackage.jruby.jnr.unixsocket.example.@1
@@ -2460,7 +2438,6 @@ org.openxmlformats.schemas.presentationml.x2006.main.impl.*-->com.dotcms.repacka
 org.apache.abdera.model.*-->com.dotcms.repackage.abdera_core_0_4_0_incubating.org.apache.abdera.model.@1
 org.elasticsearch.rest.action.admin.indices.analyze.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.rest.action.admin.indices.analyze.@1
 org.tuckey.web.filters.urlrewrite.gzip.*-->com.dotcms.repackage.urlrewritefilter_4_0_3.org.tuckey.web.filters.urlrewrite.gzip.@1
-org.apache.cactus.integration.ant.*-->com.dotcms.repackage.cactus_integration_ant_1_8_0.org.apache.cactus.integration.ant.@1
 javax.xml.xpath.*-->com.dotcms.repackage.tika_app_1_3.javax.xml.xpath.@1
 org.apache.xerces.parsers.*-->com.dotcms.repackage.tika_app_1_3.org.apache.xerces.parsers.@1
 org.elasticsearch.search.highlight.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.search.highlight.@1
@@ -2531,7 +2508,6 @@ org.apache.lucene.util.automaton.*-->com.dotcms.repackage.elasticsearch.org.apac
 schemaorg_apache_xmlbeans.namespace.URI_SHA_1_5AAF5BEFD4F30D215E94ED53118FE32C537C3B26.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.namespace.URI_SHA_1_5AAF5BEFD4F30D215E94ED53118FE32C537C3B26.@1
 org.apache.fop.render.*-->com.dotcms.repackage.fop_0_20_1.org.apache.fop.render.@1
 ucar.nc2.iosp.sigmet.*-->com.dotcms.repackage.tika_app_1_3.ucar.nc2.iosp.sigmet.@1
-org.apache.tools.ant.filters.util.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.filters.util.@1
 org.apache.tika.parser.rtf.*-->com.dotcms.repackage.tika_app_1_3.org.apache.tika.parser.rtf.@1
 org.apache.commons.net.ftp.parser.*-->com.dotcms.repackage.commons_net_1_4_1.org.apache.commons.net.ftp.parser.@1
 com.dotmarketing.jhlabs.math.*-->com.dotcms.repackage.com_dotmarketing_jhlabs_images_filters.com.dotmarketing.jhlabs.math.@1
@@ -2561,10 +2537,9 @@ hyph.*-->com.dotcms.repackage.fop_0_20_1.hyph.@1
 javax.servlet.jsp.jstl.core.*-->com.dotcms.repackage.jstl.javax.servlet.jsp.jstl.core.@1
 net.sf.jasperreports.engine.util.*-->com.dotcms.repackage.jasperreports_3_5_0.net.sf.jasperreports.engine.util.@1
 org.codehaus.groovy.vmplugin.*-->com.dotcms.repackage.groovy_all_1_7_0.org.codehaus.groovy.vmplugin.@1
-org.apache.tools.ant.types.selectors.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.types.selectors.@1
 com.sun.jersey.client.osgi.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.client.osgi.@1
-org.elasticsearch.index.mapper.core.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.index.mapper.core.@1
 net.sf.ehcache.distribution.*-->com.dotcms.repackage.ehcache_1_6_1.net.sf.ehcache.distribution.@1
+org.elasticsearch.index.mapper.core.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.index.mapper.core.@1
 org.jruby.ext.timeout.*-->com.dotcms.repackage.jruby.org.jruby.ext.timeout.@1
 org.apache.fop.render.pcl.*-->com.dotcms.repackage.fop_0_20_1.org.apache.fop.render.pcl.@1
 org.python.modules.*-->com.dotcms.repackage.jython.org.python.modules.@1
@@ -2612,7 +2587,6 @@ org.jfree.data.*-->com.dotcms.repackage.jfreechart_1_0_13.org.jfree.data.@1
 org.bouncycastle.asn1.ntt.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.asn1.ntt.@1
 org.apache.poi.hpbf.model.qcbits.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.hpbf.model.qcbits.@1
 org.joda.time.tz.data.America.Indiana.*-->com.dotcms.repackage.jruby.org.joda.time.tz.data.America.Indiana.@1
-org.apache.tools.ant.dispatch.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.dispatch.@1
 org.mozilla.javascript.edu.emory.mathcs.backport.java.util.concurrent.*-->com.dotcms.repackage.js_14.org.mozilla.javascript.edu.emory.mathcs.backport.java.util.concurrent.@1
 com.ibm.icu.impl.duration.impl.data.*-->com.dotcms.repackage.icu4j_4_0_1.com.ibm.icu.impl.duration.impl.data.@1
 org.apache.tika.parser.mbox.*-->com.dotcms.repackage.tika_app_1_3.org.apache.tika.parser.mbox.@1
@@ -2670,7 +2644,6 @@ org.apache.lucene.search.join.*-->com.dotcms.repackage.elasticsearch.org.apache.
 org.apache.abdera.i18n.text.data.*-->com.dotcms.repackage.abdera_i18n_0_4_0_incubating.org.apache.abdera.i18n.text.data.@1
 schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xmlconfig.JavaNameList.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xmlconfig.JavaNameList.@1
 org.apache.poi.hslf.exceptions.*-->com.dotcms.repackage.tika_app_1_3.org.apache.poi.hslf.exceptions.@1
-org.apache.tools.ant.util.facade.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.util.facade.@1
 com.caucho.quercus.lib.*-->com.dotcms.repackage.quercus.com.caucho.quercus.lib.@1
 org.apache.xml.serialize.*-->com.dotcms.repackage.tika_app_1_3.org.apache.xml.serialize.@1
 org.codehaus.groovy.reflection.*-->com.dotcms.repackage.groovy_all_1_7_0.org.codehaus.groovy.reflection.@1
@@ -2678,7 +2651,6 @@ org.apache.commons.compress.compressors.gzip.*-->com.dotcms.repackage.tika_app_1
 org.antlr.codegen.templates.Delphi.*-->com.dotcms.repackage.antlr_3_1_2.org.antlr.codegen.templates.Delphi.@1
 edu.emory.mathcs.backport.java.util.concurrent.*-->com.dotcms.repackage.backport_util_concurrent_3_1.edu.emory.mathcs.backport.java.util.concurrent.@1
 org.bouncycastle.crypto.engines.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.crypto.engines.@1
-org.apache.tools.tar.*-->com.dotcms.repackage.myspell.org.apache.tools.tar.@1
 org.apache.lucene.analysis.path.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.analysis.path.@1
 org.bouncycastle.jce.netscape.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.jce.netscape.@1
 org.apache.abdera.xpath.*-->com.dotcms.repackage.abdera_core_0_4_0_incubating.org.apache.abdera.xpath.@1
@@ -2829,7 +2801,6 @@ org.apache.struts.taglib.bean.*-->com.dotcms.repackage.struts.org.apache.struts.
 org.jcodings.*-->com.dotcms.repackage.jruby.org.jcodings.@1
 org.apache.hadoop.mapred.lib.db.*-->com.dotcms.repackage.hadoop_0_20_3_dev_core.org.apache.hadoop.mapred.lib.db.@1
 org.aspectj.runtime.internal.*-->com.dotcms.repackage.tika_app_1_3.org.aspectj.runtime.internal.@1
-org.apache.tools.ant.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.@1
 org.directwebremoting.guice.*-->com.dotcms.repackage.dwr_3rc2modified.org.directwebremoting.guice.@1
 org.jboss.util.*-->com.dotcms.repackage.jboss_common_core.org.jboss.util.@1
 org.jcodings.transcode.*-->com.dotcms.repackage.jruby.org.jcodings.transcode.@1
@@ -2962,7 +2933,6 @@ org.elasticsearch.common.joda.time.base.*-->com.dotcms.repackage.elasticsearch.o
 org.apache.commons.jci.compilers.*-->com.dotcms.repackage.commons_jci_core_1_0_406301.org.apache.commons.jci.compilers.@1
 org.codehaus.cargo.container.weblogic.internal.*-->com.dotcms.repackage.cargo_core_uberjar_0_9.org.codehaus.cargo.container.weblogic.internal.@1
 com.bradmcevoy.http.entity.*-->com.dotcms.repackage.milton_1_8_1_4.com.bradmcevoy.http.entity.@1
-org.apache.tools.ant.types.resources.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.types.resources.@1
 org.codehaus.jackson.map.exc.*-->com.dotcms.repackage.jackson_mapper_asl_1_9_2.org.codehaus.jackson.map.exc.@1
 jnr.ffi.provider.jffi.platform.arm.linux.*-->com.dotcms.repackage.jruby.jnr.ffi.provider.jffi.platform.arm.linux.@1
 org.elasticsearch.common.mvel2.ast.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.mvel2.ast.@1
@@ -2975,7 +2945,6 @@ org.apache.lucene.document.*-->com.dotcms.repackage.elasticsearch.org.apache.luc
 org.apache.tika.sax.*-->com.dotcms.repackage.tika_app_1_3.org.apache.tika.sax.@1
 org.apache.lucene.queryparser.classic.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.queryparser.classic.@1
 ucar.nc2.dataset.transform.*-->com.dotcms.repackage.tika_app_1_3.ucar.nc2.dataset.transform.@1
-org.apache.cactus.integration.ant.deployment.*-->com.dotcms.repackage.cactus_integration_ant_1_8_0.org.apache.cactus.integration.ant.deployment.@1
 org.h2.*-->com.dotcms.repackage.h2_1_3_169.org.h2.@1
 com.googlecode.mp4parser.*-->com.dotcms.repackage.tika_app_1_3.com.googlecode.mp4parser.@1
 org.apache.fop.system.*-->com.dotcms.repackage.fop_0_20_1.org.apache.fop.system.@1
@@ -3115,9 +3084,9 @@ org.elasticsearch.common.xcontent.yaml.*-->com.dotcms.repackage.elasticsearch.or
 org.apache.tika.parser.chm.core.*-->com.dotcms.repackage.tika_app_1_3.org.apache.tika.parser.chm.core.@1
 org.elasticsearch.common.netty.util.internal.jzlib.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.netty.util.internal.jzlib.@1
 org.xhtmlrenderer.util.*-->com.dotcms.repackage.core_renderer_modified.org.xhtmlrenderer.util.@1
-org.codehaus.cargo.container.geronimo.internal.*-->com.dotcms.repackage.cargo_core_uberjar_0_9.org.codehaus.cargo.container.geronimo.internal.@1
 org.apache.solr.client.solrj.impl.*-->com.dotcms.repackage.apache_solr_solrj_1_4_0.org.apache.solr.client.solrj.impl.@1
 org.directwebremoting.ui.scriptaculous.*-->com.dotcms.repackage.dwr_3rc2modified.org.directwebremoting.ui.scriptaculous.@1
+org.codehaus.cargo.container.geronimo.internal.*-->com.dotcms.repackage.cargo_core_uberjar_0_9.org.codehaus.cargo.container.geronimo.internal.@1
 bsh.util.lib.*-->com.dotcms.repackage.bsh_2_0b4.bsh.util.lib.@1
 org.apache.commons.lang.enums.*-->com.dotcms.repackage.commons_lang_2_4.org.apache.commons.lang.enums.@1
 org.xbill.DNS.utils.*-->com.dotcms.repackage.dnsjava_2_0_8.org.xbill.DNS.utils.@1
@@ -3161,7 +3130,6 @@ org.elasticsearch.index.cache.query.parser.none.*-->com.dotcms.repackage.elastic
 org.apache.solr.handler.*-->com.dotcms.repackage.apache_solr_core_1_4_0.org.apache.solr.handler.@1
 org.elasticsearch.gateway.blobstore.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.gateway.blobstore.@1
 com.thoughtworks.xstream.io.xml.*-->com.dotcms.repackage.xstream_1_4_4.com.thoughtworks.xstream.io.xml.@1
-org.apache.tools.ant.taskdefs.cvslib.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.taskdefs.cvslib.@1
 org.jboss.util.xml.catalog.helpers.*-->com.dotcms.repackage.jboss_common_core.org.jboss.util.xml.catalog.helpers.@1
 org.elasticsearch.index.aliases.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.index.aliases.@1
 org.drools.reteoo.beta.*-->com.dotcms.repackage.drools_core_3_0_5.org.drools.reteoo.beta.@1
@@ -3176,7 +3144,6 @@ net.sf.jasperreports.charts.xml.*-->com.dotcms.repackage.jasperreports_3_5_0.net
 org.dom4j.rule.pattern.*-->com.dotcms.repackage.tika_app_1_3.org.dom4j.rule.pattern.@1
 jxl.demo.*-->com.dotcms.repackage.jxl_2_6.jxl.demo.@1
 org.apache.lucene.analysis.hunspell.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.analysis.hunspell.@1
-org.apache.tools.bzip2.*-->com.dotcms.repackage.myspell.org.apache.tools.bzip2.@1
 jnr.ffi.provider.jffi.platform.s390.linux.*-->com.dotcms.repackage.jruby.jnr.ffi.provider.jffi.platform.s390.linux.@1
 thredds.inventory.bdb.*-->com.dotcms.repackage.tika_app_1_3.thredds.inventory.bdb.@1
 org.apache.struts.validator.validwhen.*-->com.dotcms.repackage.struts.org.apache.struts.validator.validwhen.@1
@@ -3232,7 +3199,6 @@ ucar.nc2.ncml.*-->com.dotcms.repackage.tika_app_1_3.ucar.nc2.ncml.@1
 org.apache.lucene.queryparser.flexible.core.nodes.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.queryparser.flexible.core.nodes.@1
 webapps.hdfs.*-->com.dotcms.repackage.hadoop_0_20_3_dev_core.webapps.hdfs.@1
 org.junit.internal.runners.statements.*-->com.dotcms.repackage.junit_4_8_1.org.junit.internal.runners.statements.@1
-org.apache.tools.ant.taskdefs.condition.*-->com.dotcms.repackage.myspell.org.apache.tools.ant.taskdefs.condition.@1
 org.elasticsearch.action.explain.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.action.explain.@1
 ucar.nc2.dt.image.*-->com.dotcms.repackage.tika_app_1_3.ucar.nc2.dt.image.@1
 org.elasticsearch.common.lucene.docset.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.common.lucene.docset.@1
@@ -3389,7 +3355,6 @@ org.mozilla.universalchardet.prober.*-->com.dotcms.repackage.tika_app_1_3.org.mo
 com.thoughtworks.xstream.persistence.*-->com.dotcms.repackage.xstream_1_4_4.com.thoughtworks.xstream.persistence.@1
 org.dts.spell.filter.*-->com.dotcms.repackage.myspell.org.dts.spell.filter.@1
 org.eclipse.mylyn.wikitext.core.parser.util.*-->com.dotcms.repackage.org_eclipse_mylyn_wikitext_core_1_8_0_i20120918_1109.org.eclipse.mylyn.wikitext.core.parser.util.@1
-org.apache.tools.zip.*-->com.dotcms.repackage.myspell.org.apache.tools.zip.@1
 org.apache.http.util.*-->com.dotcms.repackage.httpcore_4_2_2.org.apache.http.util.@1
 schemaorg_apache_xmlbeans.type.URI_SHA_1_5AAF5BEFD4F30D215E94ED53118FE32C537C3B26.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.type.URI_SHA_1_5AAF5BEFD4F30D215E94ED53118FE32C537C3B26.@1
 groovyjarjarantlr.collections.impl.*-->com.dotcms.repackage.groovy_all_1_7_0.groovyjarjarantlr.collections.impl.@1
@@ -3614,8 +3579,8 @@ com.liferay.filters.compression.*-->com.dotcms.repackage.compression_filter.com.
 org.yecht.*-->com.dotcms.repackage.jruby.org.yecht.@1
 com.ibm.icu.impl.data.*-->com.dotcms.repackage.icu4j_4_0_1.com.ibm.icu.impl.data.@1
 org.apache.bsf.util.event.generator.*-->com.dotcms.repackage.bsf.org.apache.bsf.util.event.generator.@1
-com.sun.jersey.spi.dispatch.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.spi.dispatch.@1
 org.elasticsearch.index.fielddata.fieldcomparator.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.index.fielddata.fieldcomparator.@1
+com.sun.jersey.spi.dispatch.*-->com.dotcms.repackage.jersey_1_12.com.sun.jersey.spi.dispatch.@1
 org.apache.lucene.codecs.lucene40.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.codecs.lucene40.@1
 org.junit.internal.requests.*-->com.dotcms.repackage.junit_4_8_1.org.junit.internal.requests.@1
 groovyjarjarantlr.actions.python.*-->com.dotcms.repackage.groovy_all_1_7_0.groovyjarjarantlr.actions.python.@1
