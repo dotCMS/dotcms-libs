@@ -42,6 +42,7 @@
                       dotcmsJar="${basedir}/${dotcms.jar}"
                       dotVersion="${dotcms.release.version}"
                       renameservices="true"
+                      prefix="dotcms-"
                       multiplejars="true"
                       verbose="false"
                       skipdependenciesreplacement="false"
@@ -106,7 +107,7 @@
             <dependency path="${basedir}/cargo-ant-0.9.jar"/>
             <dependency path="${basedir}/quartz-all-1.8.6.jar"/>
             <dependency path="${basedir}/ant-tooling.jar"/>
-            <dependency path="${basedir}/packager-taks.jar"/>
+            <!--<dependency path="${basedir}/packager-taks.jar"/>-->
             <dependency path="${basedir}/jarjar-1.4.jar"/>
 
             <!--
