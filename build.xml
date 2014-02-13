@@ -78,6 +78,7 @@
                 <exclude name="quartz-all-1.8.6.jar"/>
                 <exclude name="org.springframework*.jar"/>
                 <exclude name="h2-1.3.169.jar"/>
+                <exclude name="jruby-complete-1.7.3.jar"/>
                 <!--FIXME-->
             </fileset>
 
