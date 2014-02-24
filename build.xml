@@ -63,6 +63,7 @@
                 <exclude name="jamm-0.2.5.jar"/>
                 <exclude name="org.apache.felix.*.jar"/>
                 <exclude name="felix-4.2.1.jar"/>
+                <exclude name="esapi-2.0.1.jar"/>
                 <!--We can NOT alter these jars manifest-->
 
                 <!--We CAN repackage them but applying special rules-->
