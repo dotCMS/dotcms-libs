@@ -111,6 +111,7 @@
             <dependency path="${basedir}/ant-tooling.jar"/>
             <!--<dependency path="${basedir}/packager-taks.jar"/>-->
             <dependency path="${basedir}/jarjar-1.4.jar"/>
+            <dependency path="${basedir}/esapi-2.0.1.jar"/>
 
             <!--
             Explicit naming rules for jars
