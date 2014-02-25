@@ -63,7 +63,6 @@
                 <exclude name="jamm-0.2.5.jar"/>
                 <exclude name="org.apache.felix.*.jar"/>
                 <exclude name="felix-4.2.1.jar"/>
-                <exclude name="esapi-2.0.1.jar"/>
                 <!--We can NOT alter these jars manifest-->
 
                 <!--We CAN repackage them but applying special rules-->
@@ -111,7 +110,6 @@
             <dependency path="${basedir}/ant-tooling.jar"/>
             <!--<dependency path="${basedir}/packager-taks.jar"/>-->
             <dependency path="${basedir}/jarjar-1.4.jar"/>
-            <dependency path="${basedir}/esapi-2.0.1.jar"/>
 
             <!--
             Explicit naming rules for jars
