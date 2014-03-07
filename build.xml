@@ -1,5 +1,9 @@
 <project name="Repackager" default="repackage">
 
+    <property name="build.dir" value="build" />
+    <property name="build.classes" value="${build.dir}/classes" />
+    <property name="src.dir" value="src" />
+
     <property name="dotcms.home" value="${basedir}/../dotCMS"/>
     <property name="dotcms.dir" value="${dotcms.home}/dotCMS"/>
     <property name="lib.app" value="${dotcms.dir}/WEB-INF/lib"/>
@@ -13,12 +17,13 @@
 
     <path id="files-classpath">
         <fileset dir="${basedir}">
-            <include name="jarjar-1.4.jar"/>
-            <include name="packager-taks.jar"/>
+            <include name="jarjar-1.4.jar" />
+            <include name="myspell.jar" />
         </fileset>
         <fileset dir="${basedir}/buildlibs">
             <include name="commons-io-2.0.1.jar"/>
         </fileset>
+        <pathelement path="${build.classes}" />
     </path>
 
     <target name="clean">
@@ -26,7 +31,7 @@
         <mkdir dir="${basedir}/build"/>
     </target>
 
-    <target name="repackage" depends="clean">
+    <target name="repackage" depends="clean, compile">
 
         <!--Records the output to a file-->
         <record action="start" name="${build.log}" loglevel="verbose"/>
@@ -46,7 +51,9 @@
                       multiplejars="true"
                       verbose="false"
                       skipdependenciesreplacement="false"
-                      skipjpsfiles="false">
+                      skipjpsfiles="false"
+                      skipJarsGeneration="false"
+                      skipdependenciesjars="false">
 
             <fileset dir="${basedir}">
 
@@ -177,5 +184,36 @@
         <!--Records the output to a file-->
         <record action="stop" name="${build.log}" loglevel="verbose"/>
     </target>
+
+    <!--++++++++++++++++++++++++++++++++++++++++++-->
+    <!--PACKAGER-->
+    <path id="packager-classpath">
+        <fileset dir="${basedir}">
+            <include name="jarjar-1.4.jar"/>
+            <include name="myspell.jar"/>
+        </fileset>
+        <fileset dir="${basedir}/buildlibs">
+            <include name="commons-io-2.0.1.jar"/>
+        </fileset>
+    </path>
+
+    <target name="prepare-packager">
+        <delete dir="${build.classes}" failonerror="false"/>
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.classes}"/>
+    </target>
+
+    <target name="compile" depends="prepare-packager" description="Compiles packager source.">
+        <mkdir dir="${build.classes}"/>
+        <javac encoding="UTF-8" debug="true" debuglevel="lines,vars,source" fork="true" srcdir="${src.dir}"
+               destdir="${build.classes}"
+               source="1.6" target="1.6" compiler="javac1.6" nowarn="true" optimize="true"
+               memoryinitialsize="256m" memorymaximumsize="512m">
+            <classpath refid="files-classpath"/>
+            <include name="com/tonicsystems/jarjar/**"/>
+        </javac>
+    </target>
+    <!--PACKAGER-->
+    <!--++++++++++++++++++++++++++++++++++++++++++-->
 
 </project>
