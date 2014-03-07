@@ -24,8 +24,6 @@ public class PackagerTask extends JarJarTask {
     private String outputFolder;
     private String outputFile;
     private String prefix;
-    private String dotcmsJar;
-    private String dotVersion;
     private String onlyJar;
     private boolean multipleJars;
 
@@ -52,13 +50,6 @@ public class PackagerTask extends JarJarTask {
         //Remember the initial values, they are clean after repackage each jar
         initialRenameServices = renameServices;
         initialVerbose = verbose;
-
-        // Validate input
-        if ( this.dotcmsJar == null ) {
-            throw new IllegalArgumentException( "No dotCMS jar specified" );
-        }
-        File dotcmsJarFile = new File( this.dotcmsJar );
-        log( "dotCMS jar location: " + dotcmsJarFile.getAbsolutePath(), Project.MSG_INFO );
 
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++
         //FIRST WE RUN THE INSPECTOR TO FIND DUPLICATED CLASSES
@@ -189,11 +180,6 @@ public class PackagerTask extends JarJarTask {
         //++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         ResourceRewriter resourceRewriter = new ResourceRewriter( new CustomContentRewriter( rulesToApply.values() ), initialVerbose, initialRenameServices );
-
-        //Add the dotcms jar as a dependency we need to check and modify
-        Dependency dotcmsJarDependency = new Dependency();
-        dotcmsJarDependency.setPath( this.dotcmsJar );
-        dependencies.add( dotcmsJarDependency );
 
         //Track the time
         long startDependenciesChanges = System.currentTimeMillis();
@@ -413,7 +399,6 @@ public class PackagerTask extends JarJarTask {
 
                 //Create a name to be part of the resulting package name
                 String jarNameForPackage = jarFile.getName().substring( 0, jarFile.getName().lastIndexOf( "." ) );
-                //String jarNameForPackage = "_" + getDotVersion() + "_";
                 jarNameForPackage = jarNameForPackage.replaceAll( "-", "_" );
                 jarNameForPackage = jarNameForPackage.replaceAll( "\\.", "_" );
                 jarNameForPackage = jarNameForPackage.toLowerCase();
@@ -822,14 +807,6 @@ public class PackagerTask extends JarJarTask {
         return name.endsWith( ".jar" );
     }
 
-    public String getDotVersion () {
-        return dotVersion;
-    }
-
-    public void setDotVersion ( String dotVersion ) {
-        this.dotVersion = dotVersion;
-    }
-
     public String getOnlyJar () {
         return onlyJar;
     }
@@ -868,14 +845,6 @@ public class PackagerTask extends JarJarTask {
 
     public void setPrefix ( String prefix ) {
         this.prefix = prefix;
-    }
-
-    public String getDotcmsJar () {
-        return dotcmsJar;
-    }
-
-    public void setDotcmsJar ( String dotcmsJar ) {
-        this.dotcmsJar = dotcmsJar;
     }
 
     public boolean isMultipleJars () {
