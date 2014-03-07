@@ -62,7 +62,6 @@
                 <!--dotcms jars-->
                 <exclude name="${dotcms.jar}"/>
                 <exclude name="ant-tooling.jar"/>
-                <exclude name="packager-taks.jar"/>
                 <exclude name="jarjar-1.4.jar"/>
                 <!--dotcms jars-->
 
@@ -115,7 +114,6 @@
             <dependency path="${basedir}/cargo-ant-0.9.jar"/>
             <dependency path="${basedir}/quartz-all-1.8.6.jar"/>
             <dependency path="${basedir}/ant-tooling.jar"/>
-            <!--<dependency path="${basedir}/packager-taks.jar"/>-->
             <dependency path="${basedir}/jarjar-1.4.jar"/>
 
             <!--
