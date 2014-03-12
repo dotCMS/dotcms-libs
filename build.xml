@@ -1,5 +1,9 @@
 <project name="Repackager" default="repackage">
 
+    <property name="build.dir" value="build" />
+    <property name="build.classes" value="${build.dir}/classes" />
+    <property name="src.dir" value="src" />
+
     <property name="dotcms.home" value="${basedir}/../dotCMS"/>
     <property name="dotcms.dir" value="${dotcms.home}/dotCMS"/>
     <property name="lib.app" value="${dotcms.dir}/WEB-INF/lib"/>
@@ -13,12 +17,13 @@
 
     <path id="files-classpath">
         <fileset dir="${basedir}">
-            <include name="jarjar-1.4.jar"/>
-            <include name="packager-taks.jar"/>
+            <include name="jarjar-1.4.jar" />
+            <include name="myspell.jar" />
         </fileset>
         <fileset dir="${basedir}/buildlibs">
             <include name="commons-io-2.0.1.jar"/>
         </fileset>
+        <pathelement path="${build.classes}" />
     </path>
 
     <target name="clean">
@@ -26,7 +31,7 @@
         <mkdir dir="${basedir}/build"/>
     </target>
 
-    <target name="repackage" depends="clean">
+    <target name="repackage" depends="clean, compile">
 
         <!--Records the output to a file-->
         <record action="start" name="${build.log}" loglevel="verbose"/>
@@ -39,14 +44,14 @@
 
         <packagerTask dotcmshome="${dotcms.home}"
                       outputFolder="${basedir}/build"
-                      dotcmsJar="${basedir}/${dotcms.jar}"
-                      dotVersion="${dotcms.release.version}"
                       renameservices="true"
                       prefix="dotcms-"
                       multiplejars="true"
                       verbose="false"
                       skipdependenciesreplacement="false"
-                      skipjpsfiles="false">
+                      skipjpsfiles="false"
+                      skipJarsGeneration="false"
+                      skipdependenciesjars="false">
 
             <fileset dir="${basedir}">
 
@@ -55,7 +60,6 @@
                 <!--dotcms jars-->
                 <exclude name="${dotcms.jar}"/>
                 <exclude name="ant-tooling.jar"/>
-                <exclude name="packager-taks.jar"/>
                 <exclude name="jarjar-1.4.jar"/>
                 <!--dotcms jars-->
 
@@ -108,7 +112,6 @@
             <dependency path="${basedir}/cargo-ant-0.9.jar"/>
             <dependency path="${basedir}/quartz-all-1.8.6.jar"/>
             <dependency path="${basedir}/ant-tooling.jar"/>
-            <!--<dependency path="${basedir}/packager-taks.jar"/>-->
             <dependency path="${basedir}/jarjar-1.4.jar"/>
 
             <!--
@@ -138,32 +141,17 @@
             <dependency path="${web-inf.dir}/struts-config.xml"/>
             <dependency path="${web-inf.dir}/struts-config-ext.xml"/>
             <dependency path="${web-inf.dir}/validator-rules.xml"/>
-            <dependency path="${web-inf.dir}/tld/c.tld"/>
-            <dependency path="${web-inf.dir}/tld/c-rt.tld"/>
-            <dependency path="${web-inf.dir}/tld/displaytag.tld"/>
-            <dependency path="${web-inf.dir}/tld/dotmarketing.tld"/>
-            <dependency path="${web-inf.dir}/tld/fmt.tld"/>
-            <dependency path="${web-inf.dir}/tld/fmt-rt.tld"/>
             <dependency path="${web-inf.dir}/tld/liferay-portlet.tld"/>
             <dependency path="${web-inf.dir}/tld/liferay-util.tld"/>
-            <dependency path="${web-inf.dir}/tld/sql.tld"/>
-            <dependency path="${web-inf.dir}/tld/sql-rt.tld"/>
-            <dependency path="${web-inf.dir}/tld/struts-bean.tld"/>
             <dependency path="${web-inf.dir}/tld/struts-html.tld"/>
             <dependency path="${web-inf.dir}/tld/struts-logic.tld"/>
             <dependency path="${web-inf.dir}/tld/struts-nested.tld"/>
-            <dependency path="${web-inf.dir}/tld/struts-template.tld"/>
             <dependency path="${web-inf.dir}/tld/struts-tiles.tld"/>
-            <dependency path="${web-inf.dir}/tld/x.tld"/>
-            <dependency path="${web-inf.dir}/tld/x-rt.tld"/>
-            <dependency path="${web-inf.dir}/tld/old/struts-bean.tld"/>
             <dependency path="${web-inf.dir}/tld/old/struts-html.tld"/>
             <dependency path="${web-inf.dir}/tld/old/struts-logic.tld"/>
             <dependency path="${web-inf.dir}/tld/old/struts-nested.tld"/>
-            <dependency path="${web-inf.dir}/tld/old/struts-template.tld"/>
-            <dependency path="${web-inf.dir}/tld/old/struts-tiles.tld"/>
 
-            <dependency path="${dotcms.home}/libs/buildlibs/log4j.xml"/>
+            <dependency path="${web-inf.dir}/log4j/log4j.xml"/>
 
             <dependency path="${src-conf.dir}/dotmarketing-config.properties"/>
             <dependency path="${src-conf.dir}/commons-logging.properties"/>
@@ -177,5 +165,112 @@
         <!--Records the output to a file-->
         <record action="stop" name="${build.log}" loglevel="verbose"/>
     </target>
+
+    <!--++++++++++++++++++++++++++++++++++++++++++-->
+    <!--PACKAGER-->
+    <path id="packager-classpath">
+        <fileset dir="${basedir}">
+            <include name="jarjar-1.4.jar"/>
+            <include name="myspell.jar"/>
+        </fileset>
+        <fileset dir="${basedir}/buildlibs">
+            <include name="commons-io-2.0.1.jar"/>
+        </fileset>
+    </path>
+
+    <target name="prepare-packager">
+        <delete dir="${build.classes}" failonerror="false"/>
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.classes}"/>
+    </target>
+
+    <target name="compile" depends="prepare-packager" description="Compiles packager source.">
+        <mkdir dir="${build.classes}"/>
+        <javac encoding="UTF-8" debug="true" debuglevel="lines,vars,source" fork="true" srcdir="${src.dir}"
+               destdir="${build.classes}"
+               source="1.6" target="1.6" compiler="javac1.6" nowarn="true" optimize="true"
+               memoryinitialsize="256m" memorymaximumsize="512m">
+            <classpath refid="files-classpath"/>
+            <include name="com/tonicsystems/jarjar/**"/>
+        </javac>
+    </target>
+    <!--PACKAGER-->
+    <!--++++++++++++++++++++++++++++++++++++++++++-->
+
+    <!--++++++++++++++++++++++++++++++++++++++++++-->
+    <path id="complete-classpath">
+        <fileset dir="${basedir}">
+            <include name="*.jar" />
+        </fileset>
+        <pathelement path="${build.classes}" />
+    </path>
+    <path id="complete-classpath-exclude">
+        <fileset dir="${basedir}">
+            <include name="*.jar" />
+            <exclude name="dotcms_2.6.jar" />
+        </fileset>
+        <pathelement path="${build.classes}" />
+    </path>
+
+    <target name="find-duplicated-classes">
+
+        <taskdef classname="com.tonicsystems.jarjar.InspectorTask" name="inspectorTask">
+            <classpath>
+                <path refid="files-classpath" />
+            </classpath>
+        </taskdef>
+
+        <!--<inspectorTask librarypath="${lib.app}"/>-->
+        <!--<inspectorTask librarypath="${basedir}"/>-->
+        <inspectorTask librarypath="${basedir}/build"/>
+    </target>
+
+    <target name="find-dependencies">
+
+        <property name="lib.classpath" refid="complete-classpath"/>
+
+        <java jar="jarjar-1.4.jar" fork="true">
+            <arg value="find"/>
+            <arg value="jar"/>
+            <arg value="${lib.classpath}"/>
+        </java>
+    </target>
+
+    <!--Dependencies that have the given jar-->
+    <target name="find-dependencies-for-jar">
+
+        <property name="lib.classpath" refid="complete-classpath-exclude"/>
+
+        <java jar="jarjar-1.4.jar" fork="true">
+            <arg value="find"/>
+            <arg value="jar"/>
+
+            <arg value="dotcms_2.6.jar"/>
+            <arg value="${lib.classpath}"/>
+        </java>
+    </target>
+
+    <!--Who depend on a given jar-->
+    <target name="find-dependencies-on-jar">
+
+        <property name="lib.classpath" refid="complete-classpath-exclude"/>
+
+        <java jar="jarjar-1.4.jar" fork="true">
+            <arg value="find"/>
+            <arg value="jar"/>
+            <!--<arg value="class"/>-->
+
+            <arg value="${lib.classpath}"/>
+            <arg value="dotcms_2.6.jar"/>
+        </java>
+    </target>
+
+    <target name="print-classpath" description="Print the application classpath">
+        <!-- Capture the path as a delimited property using the refid attribute -->
+        <property name="app-classpath" refid="complete-classpath"/>
+        <!-- Emit the property to the ant console -->
+        <echo message="${app-classpath}"/>
+    </target>
+    <!--++++++++++++++++++++++++++++++++++++++++++-->
 
 </project>
