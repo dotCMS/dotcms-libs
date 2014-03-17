@@ -92,7 +92,6 @@ com.lowagie.text.pdf.internal.*-->com.dotcms.repackage.itext_2_1_0.com.lowagie.t
 org.apache.james.mime4j.parser.*-->com.dotcms.repackage.tika_app_1_3.org.apache.james.mime4j.parser.@1
 org.owasp.esapi.errors.*-->com.dotcms.repackage.esapi_2_0_1.org.owasp.esapi.errors.@1
 net.sf.jasperreports.olap.mondrian.*-->com.dotcms.repackage.jasperreports_3_5_0.net.sf.jasperreports.olap.mondrian.@1
-ROOT.tomcat.conf.Catalina.localhost.*-->com.dotcms.repackage.plugin_com_dotcms_config.ROOT.tomcat.conf.Catalina.localhost.@1
 schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.*-->com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.ListDocument.@1
 bsh.org.objectweb.asm.*-->com.dotcms.repackage.bsh_2_0b4.bsh.org.objectweb.asm.@1
 org.owasp.esapi.crypto.*-->com.dotcms.repackage.esapi_2_0_1.org.owasp.esapi.crypto.@1
@@ -353,7 +352,6 @@ org.openxmlformats.schemas.officeDocument.x2006.customProperties.*-->com.dotcms.
 ucar.nc2.units.*-->com.dotcms.repackage.tika_app_1_3.ucar.nc2.units.@1
 org.openxmlformats.schemas.drawingml.x2006.main.impl.*-->com.dotcms.repackage.tika_app_1_3.org.openxmlformats.schemas.drawingml.x2006.main.impl.@1
 org.codehaus.groovy.ast.stmt.*-->com.dotcms.repackage.groovy_all_1_7_0.org.codehaus.groovy.ast.stmt.@1
-ROOT.tomcat.conf.*-->com.dotcms.repackage.plugin_com_dotcms_config.ROOT.tomcat.conf.@1
 org.apache.chemistry.opencmis.commons.data.*-->com.dotcms.repackage.chemistry_opencmis_commons_api_0_8_0.org.apache.chemistry.opencmis.commons.data.@1
 org.codehaus.jackson.jaxrs.*-->com.dotcms.repackage.jackson_jaxrs_1_9_2.org.codehaus.jackson.jaxrs.@1
 org.apache.abdera.parser.stax.*-->com.dotcms.repackage.abdera_parser_0_4_0_incubating.org.apache.abdera.parser.stax.@1
@@ -1276,7 +1274,6 @@ org.jboss.util.id.*-->com.dotcms.repackage.jboss_common_core.org.jboss.util.id.@
 org.bouncycastle.crypto.agreement.srp.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.crypto.agreement.srp.@1
 org.elasticsearch.index.query.support.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.index.query.support.@1
 org.bouncycastle.asn1.smime.*-->com.dotcms.repackage.tika_app_1_3.org.bouncycastle.asn1.smime.@1
-ROOT.test.*-->com.dotcms.repackage.plugin_com_dotcms_config.ROOT.test.@1
 org.jboss.cache.util.concurrent.locks.*-->com.dotcms.repackage.jbosscache_core.org.jboss.cache.util.concurrent.locks.@1
 org.elasticsearch.river.routing.*-->com.dotcms.repackage.elasticsearch.org.elasticsearch.river.routing.@1
 com.lowagie.text.xml.*-->com.dotcms.repackage.itext_2_1_0.com.lowagie.text.xml.@1
@@ -1827,7 +1824,6 @@ org.elasticsearch.gateway.local.*-->com.dotcms.repackage.elasticsearch.org.elast
 org.apache.hadoop.hdfs.*-->com.dotcms.repackage.hadoop_0_20_3_dev_core.org.apache.hadoop.hdfs.@1
 org.apache.lucene.codecs.appending.*-->com.dotcms.repackage.elasticsearch.org.apache.lucene.codecs.appending.@1
 org.apache.commons.dbcp.cpdsadapter.*-->com.dotcms.repackage.commons_dbcp_1_3.org.apache.commons.dbcp.cpdsadapter.@1
-license.*-->com.dotcms.repackage.tika_app_1_3.license.@1
 com.caucho.quercus.lib.curl.*-->com.dotcms.repackage.quercus.com.caucho.quercus.lib.curl.@1
 groovy.security.*-->com.dotcms.repackage.groovy_all_1_7_0.groovy.security.@1
 org.apache.hadoop.mapreduce.lib.map.*-->com.dotcms.repackage.hadoop_0_20_3_dev_core.org.apache.hadoop.mapreduce.lib.map.@1
