@@ -130,6 +130,7 @@
             <namingrule pattern="xpp3" replacement="xmlpull"/>
             <namingrule pattern="xmlpull" replacement="xmlpull"/>
             <namingrule pattern="json" replacement="json"/>
+            <namingrule pattern="commons_jci" replacement="commons_jci"/>
             <!--<namingrule pattern="springframework" replacement="springframework_3_1_0"/>-->
 
             <!--++++++++++++++++++++++++++++++++++++++-->
