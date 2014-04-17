@@ -82,6 +82,7 @@
             	<exclude name="dwr_3rc2modified.jar"/>
             	<exclude name="jgroups-2.12.2.Final.jar"/>
             	<exclude name="stxx.jar"/>
+            	<exclude name="xstream-1.4.4.jar"/>
                 <!--We CAN repackage them but applying special rules-->
 
                 <!--FIXME-->
@@ -157,6 +158,11 @@
     		<dependency path="${basedir}/stxx.jar" generate="true" renameservices="true">
    		    	<ignore parentpackage="org.w3c.dom"/>
    			</dependency>
+    		
+    		<!--We have to exclude some packages in here, tomcat complains -->
+    		<dependency path="${basedir}/xstream-1.4.4.jar" generate="true" renameservices="true">
+		    	<ignore parentpackage="org.w3c.dom"/>
+			</dependency> 
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--List of dependencies to check if there are dependencies to old packages -->
             <dependency path="${basedir}/cactus.integration.ant-1.8.0.jar"/>
