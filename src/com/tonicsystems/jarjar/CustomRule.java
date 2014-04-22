@@ -8,7 +8,7 @@ import java.util.Comparator;
  */
 public class CustomRule extends Rule {
 
-    String parent;
+    private String parent;
 
     public String getParent () {
         return parent;
@@ -20,34 +20,33 @@ public class CustomRule extends Rule {
 
     public class RuleSortByParent implements Comparator<CustomRule> {
 
-        String parent;
+        private String currentjar;
 
-        public RuleSortByParent ( String parent ) {
-            this.parent = parent;
+        public RuleSortByParent ( String curentjar ) {
+            this.currentjar = curentjar;
         }
 
-        String getParent () {
-            return parent;
-        }
-
-        void setParent ( String parent ) {
-            this.parent = parent;
-        }
-
+        /**
+         * This compare method put at the beginning the rules that have
+         * as parent the current jar, the Nulls ones at the bottom and 
+         * everything else is equal
+         */
         @Override
         public int compare ( CustomRule rule1, CustomRule rule2 ) {
-
-            if ( rule1.getParent() == null ) {
-                return -1;
-            }
-
-            if ( rule1.getParent().equals( this.getParent() ) ) {
-                return -1;
-            } else if ( !rule1.getParent().equals( this.getParent() ) ) {
-                return 1;
-            } else {
+        	if ( rule1.getParent().equals( rule2.getParent()) ) {
                 return 0;
+            } else if ( !rule1.getParent().equals( rule2.getParent() )){
+            	if( rule1.getParent().equals( currentjar )) {
+            		return -1;
+            	}else if( rule2.getParent().equals( currentjar )) {
+            		return 1;
+            	}else if(rule1.getParent()==null){
+            		return 1;
+            	}else if(rule2.getParent()==null){
+            		return -1;
+            	}
             }
+            return 0;
         }
     }
 

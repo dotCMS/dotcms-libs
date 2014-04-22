@@ -628,7 +628,10 @@ public class PackagerTask extends JarJarTask {
         //First lets sort the rules collection, first the rules created from this jar
         List<CustomRule> rulesList = new ArrayList<CustomRule>( rules );
         Collections.sort( rulesList, new CustomRule().new RuleSortByParent( originalFileName ) );
-
+        
+        //Uncomment this line to validate that the reorder is working updating just one jar for debug
+        //logRulesOrdered(rulesList);
+        
         //Destiny file
         setDestFile( outFile );
 
@@ -763,6 +766,22 @@ public class PackagerTask extends JarJarTask {
 
         //Write this list of rules into a log file
         writeToLog( rulesBuilder, "rules.log" );
+    }
+    private void logRulesOrdered ( Collection<CustomRule> rules ) {
+
+        StringBuilder rulesBuilder = new StringBuilder();
+
+        //SOME LOGGING
+        log( "" );
+        log( "-----------------------------------------" );
+        log( "Ordered Rules to apply: " );
+        for ( CustomRule rule : rules ) {
+            rulesBuilder.append( rule.getPattern() ).append( "-->" ).append( rule.getResult() ).append( "\n" );
+            log( rule.getPattern() + " --> " + rule.getResult() );
+        }
+
+        //Write this list of rules into a log file
+        writeToLog( rulesBuilder, "orderedrules.log" );
     }
 
     /**
