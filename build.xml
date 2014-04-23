@@ -74,6 +74,7 @@
                 <exclude name="xpp3_min-1.1.4c.jar"/>
                 <exclude name="jaxen-1.1.3.jar"/>
                 <exclude name="tika-app-1.3.jar"/>
+            	<exclude name="jasperreports-3.5.0.jar"/>
                 <!--We CAN repackage them but applying special rules-->
 
                 <!--FIXME-->
@@ -106,6 +107,11 @@
                 <ignore parentpackage="org.slf4j"/>
                 <ignore parentpackage="license"/>
             </dependency>
+    		
+    		<!--We have to exclude some packages in here, tomcat complains-->
+    		<dependency path="${basedir}/jasperreports-3.5.0.jar" generate="true" renameservices="true">
+    		    <ignore parentpackage="net.sf.jasperreports"/>
+    		</dependency>
    
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--List of dependencies to check if there are dependencies to old packages -->
