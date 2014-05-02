@@ -139,6 +139,7 @@
             <namingrule pattern="commons_jci" replacement="commons_jci"/>
     		<namingrule pattern="xalan" replacement="tika_app_1_3"/>
     		<namingrule pattern="tika" replacement="tika_app_1_3"/>
+    		<namingrule pattern="nekohtml" replacement="tika_app_1_3"/>
     		
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--++++++++++++++Resources+++++++++++++++-->
