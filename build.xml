@@ -65,8 +65,6 @@
 
                 <!--We can NOT alter these jars manifest-->
                 <exclude name="jamm-0.2.5.jar"/>
-                <exclude name="org.apache.felix.*.jar"/>
-                <exclude name="felix-4.2.1.jar"/>
                 <!--We can NOT alter these jars manifest-->
 
                 <!--We CAN repackage them but applying special rules-->
@@ -108,10 +106,13 @@
                 <ignore parentpackage="license"/>
             </dependency>
     		
-    		<!--We have to exclude some packages in here, tomcat complains-->
+    		<!--We have to exclude some packages in here in order to be able to import report designs, that excluded package must be visible-->
     		<dependency path="${basedir}/jasperreports-3.5.0.jar" generate="true" renameservices="true">
     		    <ignore parentpackage="net.sf.jasperreports"/>
     		</dependency>
+
+            <!--OSGI-->
+            <dependency path="${basedir}/felix-4.2.1.jar" generate="true" renameservices="false"/>
    
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--List of dependencies to check if there are dependencies to old packages -->

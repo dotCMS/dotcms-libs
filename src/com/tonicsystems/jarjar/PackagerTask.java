@@ -1,6 +1,7 @@
 package com.tonicsystems.jarjar;
 
 import com.tonicsystems.jarjar.ext_util.EntryStruct;
+import com.tonicsystems.jarjar.ext_util.StandaloneJarProcessor;
 import com.tonicsystems.jarjar.resource.MatchableRule;
 import com.tonicsystems.jarjar.resource.ResourceRewriter;
 import com.dotcms.repackage.commons_io_2_0_1.org.apache.commons.io.IOUtils;
@@ -148,7 +149,7 @@ public class PackagerTask extends JarJarTask {
 
                     //This can be use for testing purposes
                     if ( getOnlyJar() != null && !getOnlyJar().isEmpty()
-                            && !getOnlyJar().equals( jar.getName() ) ) {
+                            && !getOnlyJar().contains( jar.getName() ) ) {
                         continue;
                     }
 
@@ -197,7 +198,7 @@ public class PackagerTask extends JarJarTask {
                     //This can be use for testing purposes
                     File jarToVerify = new File( filePath );
                     if ( getOnlyJar() != null && !getOnlyJar().isEmpty()
-                            && !getOnlyJar().equals( jarToVerify.getName() ) ) {
+                            && !getOnlyJar().contains( jarToVerify.getName() ) ) {
                         continue;
                     }
 
@@ -632,17 +633,20 @@ public class PackagerTask extends JarJarTask {
         //Uncomment this line to validate that the reorder is working updating just one jar for debug
         //logRulesOrdered(rulesList);
         
-        //Destiny file
-        setDestFile( outFile );
-
         //Prepare the jars that we are going to repackage
-        for ( File jar : jars ) {
+        if ( jars.size() > 1 ) {
 
-            ZipFileSet fileSet = new ZipFileSet();
-            fileSet.setSrc( jar );
+            //Destiny file
+            setDestFile( outFile );
 
-            //Add it to the fileset
-            addZipfileset( fileSet );
+            for ( File jar : jars ) {
+
+                ZipFileSet fileSet = new ZipFileSet();
+                fileSet.setSrc( jar );
+
+                //Add it to the fileset
+                addZipfileset( fileSet );
+            }
         }
 
         //Prepare the rules for these groups of jar
@@ -657,19 +661,25 @@ public class PackagerTask extends JarJarTask {
                 }
             }
 
-            addConfiguredRule( rule );
+            if ( jars.size() > 1 ) {
+                addConfiguredRule( rule );
+            }
             patterns.add( rule );
         }
 
         //Generate the new jar
         MainProcessor processor = new MainProcessor( patterns, initialVerbose, false, renameServices );
-        execute( processor );
         try {
-            processor.strip( getDestFile() );
+            if ( jars.size() == 1 ) {
+                StandaloneJarProcessor.run( jars.iterator().next(), outFile, processor );
+                processor.strip( outFile );
+            } else {
+                execute( processor );
+                processor.strip( getDestFile() );
+            }
         } catch ( IOException e ) {
             throw new BuildException( e );
         }
-        //super.execute();
 
         //Clean everything and get ready to start again
         super.reset();
@@ -760,7 +770,7 @@ public class PackagerTask extends JarJarTask {
         log( "-----------------------------------------" );
         log( "Rules to apply: " );
         for ( CustomRule rule : rules ) {
-            rulesBuilder.append( rule.getPattern() ).append( "-->" ).append( rule.getResult() ).append( "\n" );
+            rulesBuilder.append( "rule " ).append( rule.getPattern() ).append( " " ).append( rule.getResult() ).append( "\n" );
             log( rule.getPattern() + " --> " + rule.getResult() );
         }
 
@@ -776,7 +786,7 @@ public class PackagerTask extends JarJarTask {
         log( "-----------------------------------------" );
         log( "Ordered Rules to apply: " );
         for ( CustomRule rule : rules ) {
-            rulesBuilder.append( rule.getPattern() ).append( "-->" ).append( rule.getResult() ).append( "\n" );
+            rulesBuilder.append( "rule " ).append( rule.getPattern() ).append( " " ).append( rule.getResult() ).append( "\n" );
             log( rule.getPattern() + " --> " + rule.getResult() );
         }
 
