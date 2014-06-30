@@ -475,7 +475,6 @@ rule org.apache.hadoop.io.compress.bzip2.* com.dotcms.repackage.hadoop_0_20_3_de
 rule org.mozilla.javascript.net.sf.retrotranslator.runtime.java.lang.reflect.* com.dotcms.repackage.js_14.org.mozilla.javascript.net.sf.retrotranslator.runtime.java.lang.reflect.@1
 rule org.directwebremoting.server.servlet3.* com.dotcms.repackage.dwr_3rc2modified.org.directwebremoting.server.servlet3.@1
 rule org.eclipse.mylyn.wikitext.core.validation.* com.dotcms.repackage.org_eclipse_mylyn_wikitext_core_1_8_0_i20120918_1109.org.eclipse.mylyn.wikitext.core.validation.@1
-rule org.apache.xml.utils.synthetic.reflection.* com.dotcms.repackage.tika_app_1_3.org.apache.xml.utils.synthetic.reflection.@1
 rule org.elasticsearch.discovery.zen.publish.* com.dotcms.repackage.elasticsearch.org.elasticsearch.discovery.zen.publish.@1
 rule org.jboss.cache.util.* com.dotcms.repackage.jbosscache_core.org.jboss.cache.util.@1
 rule org.apache.commons.digester.substitution.* com.dotcms.repackage.commons_digester.org.apache.commons.digester.substitution.@1
@@ -727,7 +726,6 @@ rule org.mockito.internal.matchers.* com.dotcms.repackage.mockito_all_1_9_5.org.
 rule jsx3.lang.* com.dotcms.repackage.dwr_3rc2modified.jsx3.lang.@1
 rule org.jfree.chart.title.* com.dotcms.repackage.jfreechart_1_0_13.org.jfree.chart.title.@1
 rule org.elasticsearch.common.joda.time.convert.* com.dotcms.repackage.elasticsearch.org.elasticsearch.common.joda.time.convert.@1
-rule org.apache.xalan.stree.* com.dotcms.repackage.tika_app_1_3.org.apache.xalan.stree.@1
 rule org.apache.hadoop.http.* com.dotcms.repackage.hadoop_0_20_3_dev_core.org.apache.hadoop.http.@1
 rule com.sun.jersey.api.container.httpserver.* com.dotcms.repackage.jersey_1_12.com.sun.jersey.api.container.httpserver.@1
 rule org.apache.poi.hslf.util.* com.dotcms.repackage.tika_app_1_3.org.apache.poi.hslf.util.@1
@@ -967,7 +965,6 @@ rule org.codehaus.cargo.container.deployer.* com.dotcms.repackage.cargo_core_ube
 rule org.apache.poi.poifs.eventfilesystem.* com.dotcms.repackage.tika_app_1_3.org.apache.poi.poifs.eventfilesystem.@1
 rule org.apache.lucene.queryparser.flexible.core.parser.* com.dotcms.repackage.elasticsearch.org.apache.lucene.queryparser.flexible.core.parser.@1
 rule com.bradmcevoy.property.* com.dotcms.repackage.milton_1_8_1_4.com.bradmcevoy.property.@1
-rule org.w3c.dom.range.* com.dotcms.repackage.tika_app_1_3.org.w3c.dom.range.@1
 rule org.apache.tika.parser.chm.lzx.* com.dotcms.repackage.tika_app_1_3.org.apache.tika.parser.chm.lzx.@1
 rule com.caucho.quercus.lib.gettext.expr.* com.dotcms.repackage.quercus.com.caucho.quercus.lib.gettext.expr.@1
 rule com.sun.jersey.api.model.* com.dotcms.repackage.jersey_1_12.com.sun.jersey.api.model.@1
@@ -2171,9 +2168,9 @@ rule org.apache.xmlbeans.impl.inst2xsd.* com.dotcms.repackage.tika_app_1_3.org.a
 rule de.l3s.boilerpipe.document.* com.dotcms.repackage.tika_app_1_3.de.l3s.boilerpipe.document.@1
 rule org.jgroups.logging.* com.dotcms.repackage.jgroups_2_12_2_final.org.jgroups.logging.@1
 rule org.apache.xerces.impl.msg.* com.dotcms.repackage.tika_app_1_3.org.apache.xerces.impl.msg.@1
-rule org.elasticsearch.search.facet.nested.* com.dotcms.repackage.elasticsearch.org.elasticsearch.search.facet.nested.@1
 rule org.exolab.castor.dsml.* com.dotcms.repackage.castor.org.exolab.castor.dsml.@1
 rule org.elasticsearch.search.facet.datehistogram.* com.dotcms.repackage.elasticsearch.org.elasticsearch.search.facet.datehistogram.@1
+rule org.elasticsearch.search.facet.nested.* com.dotcms.repackage.elasticsearch.org.elasticsearch.search.facet.nested.@1
 rule org.apache.struts.taglib.tiles.* com.dotcms.repackage.struts.org.apache.struts.taglib.tiles.@1
 rule org.jgroups.persistence.* com.dotcms.repackage.jgroups_2_12_2_final.org.jgroups.persistence.@1
 rule org.apache.struts.tiles.* com.dotcms.repackage.struts.org.apache.struts.tiles.@1
@@ -2958,7 +2955,6 @@ rule org.bouncycastle.mail.smime.examples.* com.dotcms.repackage.tika_app_1_3.or
 rule org.junit.runners.* com.dotcms.repackage.junit_4_8_1.org.junit.runners.@1
 rule org.elasticsearch.index.cache.query.parser.none.* com.dotcms.repackage.elasticsearch.org.elasticsearch.index.cache.query.parser.none.@1
 rule org.apache.solr.handler.* com.dotcms.repackage.apache_solr_core_1_4_0.org.apache.solr.handler.@1
-rule org.apache.xml.utils.synthetic.* com.dotcms.repackage.tika_app_1_3.org.apache.xml.utils.synthetic.@1
 rule org.elasticsearch.gateway.blobstore.* com.dotcms.repackage.elasticsearch.org.elasticsearch.gateway.blobstore.@1
 rule com.thoughtworks.xstream.io.xml.* com.dotcms.repackage.xstream_1_4_4.com.thoughtworks.xstream.io.xml.@1
 rule org.jboss.util.xml.catalog.helpers.* com.dotcms.repackage.jboss_common_core.org.jboss.util.xml.catalog.helpers.@1
