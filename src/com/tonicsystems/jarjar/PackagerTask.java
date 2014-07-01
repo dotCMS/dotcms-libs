@@ -379,12 +379,13 @@ public class PackagerTask extends JarJarTask {
                                     || packageName.equals( "schema" )
                                     || packageName.equals( "conf" )
                                     || packageName.equals( "images" )
+                                    || packageName.equals( "repackage" )
                                     || packageName.equals( "config" )) ) {
                         /*
                           We don't want something like common.**, a very small an common package, replacing this is dangerous
                          */
                         continue;
-                    } else if ( packageName.contains( "META-INF" ) ) {
+                    } else if ( packageName.contains( "META-INF" ) || packageName.contains( "OSGI-INF" ) ) {
                         continue;
                     }
                 } else {

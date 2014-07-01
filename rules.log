@@ -1017,7 +1017,6 @@ rule org.apache.lucene.analysis.ngram.* com.dotcms.repackage.elasticsearch.org.a
 rule net.sf.cglib.beans.* com.dotcms.repackage.cglib_nodep_2_2.net.sf.cglib.beans.@1
 rule org.apache.abdera.i18n.lang.* com.dotcms.repackage.abdera_i18n_0_4_0_incubating.org.apache.abdera.i18n.lang.@1
 rule org.directwebremoting.servlet.* com.dotcms.repackage.dwr_3rc2modified.org.directwebremoting.servlet.@1
-rule OSGI-INF.metatype.* com.dotcms.repackage.org_apache_felix_fileinstall_3_1_10.OSGI-INF.metatype.@1
 rule org.apache.lucene.queryparser.surround.parser.* com.dotcms.repackage.elasticsearch.org.apache.lucene.queryparser.surround.parser.@1
 rule org.dts.spell.utils.* com.dotcms.repackage.myspell.org.dts.spell.utils.@1
 rule org.apache.pdfbox.pdmodel.font.* com.dotcms.repackage.tika_app_1_3.org.apache.pdfbox.pdmodel.font.@1
@@ -1137,7 +1136,6 @@ rule org.apache.abdera.i18n.unicode.data.* com.dotcms.repackage.abdera_i18n_0_4_
 rule com.sun.jersey.server.impl.component.* com.dotcms.repackage.jersey_1_12.com.sun.jersey.server.impl.component.@1
 rule org.xhtmlrenderer.extend.* com.dotcms.repackage.core_renderer_modified.org.xhtmlrenderer.extend.@1
 rule org.drools.asm.util.* com.dotcms.repackage.drools_core_3_0_5.org.drools.asm.util.@1
-rule repackage.* com.dotcms.repackage.tika_app_1_3.repackage.@1
 rule net.sf.hibernate.collection.* com.dotcms.repackage.hibernate2.net.sf.hibernate.collection.@1
 rule nl.captcha.audio.noise.* com.dotcms.repackage.simplecaptcha_1_2_1.nl.captcha.audio.noise.@1
 rule schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.AnnotationDocument.* com.dotcms.repackage.tika_app_1_3.schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.AnnotationDocument.@1
