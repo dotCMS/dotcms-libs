@@ -45,7 +45,7 @@
     	<packagerTask dotcmshome="${dotcms.home}"
                       outputFolder="${basedir}/build"
                       renameservices="true"
-                      prefix="dotcms-"
+                      prefix="dot."
                       multiplejars="true"
                       verbose="false"
                       skipdependenciesreplacement="false"

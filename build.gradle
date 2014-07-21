@@ -1,0 +1,78 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'build'
+        }
+    }
+}
+
+task jarLib(type: Jar) {
+
+    //baseName "dot."
+    //from sourceSets.main.resources
+    //from 'build'
+    //exclude '**/impl/**'
+
+    from(sourceSets.main.resources) {
+        //include "dot.**"
+        include "dot.abdera-extensions-html-0.4.0-incubating.jar"
+        //include "dot.tika-app-1.3.jar"
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+
+            String jarFolder = "build"
+            //String jarName = "dot.abdera-extensions-html-0.4.0-incubating.jar"
+            String jarName = "dot.odmg.jar"
+            JarInfo jarInfo = new JarInfo(jarName);
+
+            groupId 'com.dotcms.lib'
+            artifactId jarInfo.name
+            version jarInfo.version
+
+            artifact jarFolder + "/" + jarName// Publish a file created outside of the build
+        }
+    }
+    repositories {
+        maven {
+            url "http://repo.dotcms.com/artifactory/ext-release-local"
+            credentials {
+                username = 'user.name'
+                password = 'XYZ'
+            }
+        }
+    }
+}
+
+class JarInfo {
+
+    String name
+    String version
+    String jarPath
+
+    JarInfo(String path) {
+
+        jarPath = path
+        name = path.replace(".jar", "")
+
+        Matcher matcher = Pattern.compile("\\d+").matcher(path)
+        if (matcher.find()) {
+            int start = matcher.start()
+            String tempName = name.substring(0, start-1)
+            version = name.substring(start, name.length())
+            name = tempName
+        } else {
+            version = 'ukv'
+        }
+    }
+
+}
