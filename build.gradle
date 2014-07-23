@@ -1,29 +1,13 @@
-import java.util.regex.Matcher
-import java.util.regex.Pattern
-
 apply plugin: 'java'
+apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-sourceSets {
-    main {
-        resources {
-            srcDir 'build'
-        }
-    }
-}
-
-task jarLib(type: Jar) {
-
-    //baseName "dot."
-    //from sourceSets.main.resources
-    //from 'build'
-    //exclude '**/impl/**'
-
-    from(sourceSets.main.resources) {
-        //include "dot.**"
-        include "dot.abdera-extensions-html-0.4.0-incubating.jar"
-        //include "dot.tika-app-1.3.jar"
-    }
+task publishProperties {
+    ext.groupId = 'com.dotcms.lib'
+    ext.repository = "http://repo.dotcms.com/artifactory/ext-release-local"
+    ext.validatonURL = "http://repo.dotcms.com/artifactory/simple/ext-release-local/"
+    ext.username = 'jonathan.gamba'
+    ext.password = 'Leviathanjs4XYZ'
 }
 
 publishing {
@@ -31,48 +15,103 @@ publishing {
         mavenJava(MavenPublication) {
 
             String jarFolder = "build"
-            //String jarName = "dot.abdera-extensions-html-0.4.0-incubating.jar"
-            String jarName = "dot.odmg.jar"
-            JarInfo jarInfo = new JarInfo(jarName);
+            //String jarName = "dot.abdera-extensions-html_0.4.0-incubating_1.jar"
+            String jarName = "dot.odmg_ukv_1.jar"
+            JarInfo jarInfo = new JarInfo(jarName, publishProperties.groupId, publishProperties.validatonURL);
 
-            groupId 'com.dotcms.lib'
-            artifactId jarInfo.name
-            version jarInfo.version
+            println "--------------------------------"
+            println publishProperties.repository
+            println publishProperties.validatonURL
+            println publishProperties.groupId
+            println jarInfo.artifactId
+            println jarInfo.getVersion()
+            println "--------------------------------"
 
+            //Setting the properties for the pom and artifactory
+            groupId publishProperties.groupId
+            artifactId jarInfo.artifactId
+            version jarInfo.getVersion()
+            pom.withXml {
+                def buildNode = asNode().appendNode( 'build' )
+                buildNode.appendNode( 'finalName', '${artifactId}_${version}' )
+            }
+
+            //artifact jar
             artifact jarFolder + "/" + jarName// Publish a file created outside of the build
         }
     }
     repositories {
         maven {
-            url "http://repo.dotcms.com/artifactory/ext-release-local"
+            url publishProperties.repository
             credentials {
-                username = 'user.name'
-                password = 'XYZ'
+                username = publishProperties.username
+                password = publishProperties.password
             }
         }
     }
 }
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'commons-httpclient:commons-httpclient:3.1'
+    }
+}
+
+import org.apache.commons.httpclient.HttpClient
+import org.apache.commons.httpclient.methods.GetMethod
 class JarInfo {
 
-    String name
-    String version
-    String jarPath
+    String groupId
+    String artifactId
+    String jarVersion
+    String dotVersion
+    String jarName
 
-    JarInfo(String path) {
+    JarInfo(String jar, String group, String validationURL) {
 
-        jarPath = path
-        name = path.replace(".jar", "")
+        groupId = group
+        jarName = jar
+        artifactId = jarName.replace(".jar", "")
+        String groupFragmentPath = group.replace(".", "/")
 
-        Matcher matcher = Pattern.compile("\\d+").matcher(path)
-        if (matcher.find()) {
-            int start = matcher.start()
-            String tempName = name.substring(0, start-1)
-            version = name.substring(start, name.length())
-            name = tempName
-        } else {
-            version = 'ukv'
+        String[] nameArray = artifactId.split("_")
+        artifactId = nameArray[0]
+        jarVersion = nameArray[1]
+        dotVersion = nameArray[2]
+
+        //Create the URL in order to check if the artifact exist in artifactory
+        String url = validationURL + groupFragmentPath + '/' + artifactId + '/' + getVersion() + '/' + jarName
+
+        Boolean exist = exist(url)
+        println '+++++++++++++++++++++++++++'
+        println url
+        println exist
+        println '+++++++++++++++++++++++++++'
+
+        if (exist) {
+            dotVersion = Integer.parseInt(dotVersion) + 1
         }
+    }
+
+    public String getVersion () {
+        return jarVersion + "_" + dotVersion
+    }
+
+    private Boolean exist (String url) {
+
+        HttpClient client = new HttpClient();
+        GetMethod method = new GetMethod( url );
+
+        //Hit the url
+        int status = client.executeMethod(method);
+        if(status == 200){
+            return true
+        }
+
+        return false
     }
 
 }
