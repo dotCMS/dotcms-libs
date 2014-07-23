@@ -7,7 +7,7 @@ task publishProperties {
     ext.repository = "http://repo.dotcms.com/artifactory/ext-release-local"
     ext.validatonURL = "http://repo.dotcms.com/artifactory/simple/ext-release-local/"
     ext.username = 'jonathan.gamba'
-    ext.password = 'Leviathanjs4XYZ'
+    ext.password = 'XYZ'
 }
 
 publishing {
