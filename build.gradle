@@ -7,16 +7,20 @@ task publishProperties {
     ext.groupId = 'com.dotcms.lib'
     ext.repository = "http://repo.dotcms.com/artifactory/ext-release-local"
     ext.validatonURL = "http://repo.dotcms.com/artifactory/simple/ext-release-local/"
-    ext.username = 'jonathan.gamba'
+    ext.username = 'user.name'
     ext.password = 'XYZ'
 }
 
-def repackagedJars = ["dot.odmg_ukv_1", "dot.abdera-extensions-html_0.4.0-incubating_1"]
+FileTree artifactsFolderTree
 
 artifacts{
-    //for each jar add a defaultPublishArtifact to the archives configuration
-    repackagedJars.each{ jarName ->
-        archives new DefaultPublishArtifact(jarName, "jar", "jar", null, new Date(), new File("$buildDir", "${jarName}.jar"))
+
+    artifactsFolderTree = fileTree(dir: 'build', includes: ['dot.*.jar'])
+    //Iterate over the contents of a tree
+    artifactsFolderTree.each {File file ->
+
+        def fileName = file.name.replace(".jar", "")
+        archives new DefaultPublishArtifact(fileName, "jar", "jar", null, new Date(), file)
     }
 }
 
@@ -24,29 +28,21 @@ uploadArchives(){
     repositories {
         mavenDeployer {
 
-            repackagedJars.each{ jarName ->
+            //repackagedJars.each{ jarName ->
+            artifactsFolderTree.each{ File jarFile ->
 
-                JarInfo jarInfo = new JarInfo(jarName, publishProperties.groupId, publishProperties.validatonURL);
+                JarInfo jarInfo = new JarInfo(jarFile.name, publishProperties.groupId, publishProperties.validatonURL);
+                def fileName = jarInfo.fileName
 
-                println "--------------------------------"
-                println "--------------------------------"
-                println publishProperties.repository
-                println publishProperties.validatonURL
-                println publishProperties.groupId
-                println jarInfo.artifactId
-                println jarInfo.getVersion()
-                println "--------------------------------"
-                println "--------------------------------"
-
-                addFilter(jarName) {artifact, file ->
-                    artifact.name == jarName
+                addFilter(fileName) {artifact, file ->
+                    artifact.name == fileName
                 }
 
                 //Setting the properties for the pom and artifactory
-                pom(jarName).artifactId = jarInfo.artifactId
-                pom(jarName).version = jarInfo.getVersion()
-                pom(jarName).groupId = publishProperties.groupId
-                pom(jarName).project {
+                pom(fileName).artifactId = jarInfo.artifactId
+                pom(fileName).version = jarInfo.getVersion()
+                pom(fileName).groupId = publishProperties.groupId
+                pom(fileName).project {
                     build {
                         finalName '${artifactId}_${version}'
                     }
@@ -74,34 +70,57 @@ import org.apache.commons.httpclient.HttpClient
 import org.apache.commons.httpclient.methods.GetMethod
 class JarInfo {
 
+    String fileName
     String groupId
     String artifactId
     String jarVersion
     String dotVersion
+    String validationURL
+    Boolean exist
 
-    JarInfo(String jarName, String group, String validationURL) {
+    JarInfo(String jarName, String group, String artifactoryValidationURL) {
 
+        validationURL = artifactoryValidationURL
+        fileName = jarName.replace(".jar", "")
         groupId = group
-        artifactId = jarName
-        String groupFragmentPath = group.replace(".", "/")
+        artifactId = fileName
 
         String[] nameArray = artifactId.split("_")
         artifactId = nameArray[0]
-        jarVersion = nameArray[1]
-        dotVersion = nameArray[2]
+        if (nameArray.length == 1) {
+            jarVersion = 'ukv'
+        } else {
+            jarVersion = nameArray[1]
+        }
+        dotVersion = "1"//Lets start with this version and lets search in artifactory the real dotcms version
+
+        //Search for the next allowed version to upload
+        dotVersion = searchDotVersion(dotVersion)
+    }
+
+    /**
+     * Given and initial dot version this method will search for the latest available version in artifactory.
+     * @param currentDotVersion
+     * @return
+     */
+    private String searchDotVersion (String currentDotVersion) {
+
+        dotVersion = currentDotVersion
 
         //Create the URL in order to check if the artifact exist in artifactory
-        //String url = validationURL + groupFragmentPath + '/' + artifactId + '/' + getVersion() + '/' + jarName + ".jar"
+        String groupFragmentPath = groupId.replace(".", "/")
         String url = validationURL + groupFragmentPath + '/' + artifactId + '/' + getVersion() + '/' + artifactId + "-" + getVersion() + ".jar"
 
-        Boolean exist = exist(url)
-        println '+++++++++++++++++++++++++++'
-        println url
-        println exist
-        println '+++++++++++++++++++++++++++'
+        //Validate if this version exist on the artifactory repo
+        exist = exist(url)
 
         if (exist) {
+            //Exist lets try again to see if we find a version that does not exist
             dotVersion = Integer.parseInt(dotVersion) + 1
+            return searchDotVersion(dotVersion)
+        } else {
+            //We found a version that does not exist on artifactory
+            return dotVersion
         }
     }
 
