@@ -59,7 +59,7 @@
 
                 <!--dotcms jars-->
                 <exclude name="dotcms_*"/><!--dotcms jar-->
-                <exclude name="ant-tooling_*"/>
+                <exclude name="ant-tooling*"/>
                 <exclude name="jarjar_*"/>
                 <!--dotcms jars-->
 
@@ -68,7 +68,7 @@
                 <!--We can NOT alter these jars manifest-->
 
                 <!--We CAN repackage them but applying special rules-->
-                <exclude name="myspell_*"/>
+                <exclude name="myspell*"/>
                 <exclude name="xpp3-min_*"/>
                 <exclude name="jaxen_*"/>
                 <exclude name="tika-app_*"/>
@@ -96,7 +96,7 @@
             <!--We can repackage them but not rename their services files-->
 
             <!--We have to exclude some packages in here, Ant build files complains-->
-            <dependency path="${basedir}/myspell_" generate="true">
+            <dependency path="${basedir}/myspell" generate="true">
                 <ignore parentpackage="org.apache.tools"/>
             </dependency>
 
@@ -120,7 +120,7 @@
             <dependency path="${basedir}/cactus.integration.ant_"/>
             <dependency path="${basedir}/cargo-ant_"/>
             <dependency path="${basedir}/quartz-all_"/>
-            <dependency path="${basedir}/ant-tooling_"/>
+            <dependency path="${basedir}/ant-tooling"/>
             <dependency path="${basedir}/jarjar_"/>
 
             <!--
