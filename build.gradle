@@ -46,6 +46,12 @@ uploadArchives(){
                         finalName '${artifactId}_${version}'
                     }
                 }
+
+                //Some feedback
+                println " --> Preparing to upload: " + jarFile.name
+                println "\tgroupId: " + publishProperties.groupId
+                println "\tartifactId: " + jarInfo.artifactId
+                println "\tversion: " + jarInfo.getVersion()
             }
 
             repository(url: publishProperties.repository) {
@@ -58,7 +64,9 @@ uploadArchives(){
 
 buildscript {
     repositories {
-        mavenCentral()
+        maven {
+            url "http://repo.dotcms.com/artifactory/libs-release"
+        }
     }
     dependencies {
         classpath 'commons-httpclient:commons-httpclient:3.1'
@@ -86,11 +94,7 @@ class JarInfo {
 
         String[] nameArray = artifactId.split("_")
         artifactId = nameArray[0]
-        if (nameArray.length == 1) {
-            jarVersion = 'ukv'
-        } else {
-            jarVersion = nameArray[1]
-        }
+        jarVersion = nameArray[1]
         dotVersion = "1"//Lets start with this version and lets search in artifactory the real dotcms version
 
         //Search for the next allowed version to upload
