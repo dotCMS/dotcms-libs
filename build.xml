@@ -63,10 +63,6 @@
                 <exclude name="jarjar_*"/>
                 <!--dotcms jars-->
 
-                <!--We can NOT alter these jars manifest-->
-                <exclude name="jamm_*"/>
-                <!--We can NOT alter these jars manifest-->
-
                 <!--We CAN repackage them but applying special rules-->
                 <exclude name="myspell_*"/>
                 <exclude name="xpp3-min_*"/>

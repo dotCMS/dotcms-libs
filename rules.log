@@ -2163,6 +2163,7 @@ rule org.jboss.cache.factories.* com.dotcms.repackage.jbosscache_core.org.jboss.
 rule org.mozilla.javascript.net.sf.retrotranslator.runtime.asm.signature.* com.dotcms.repackage.js.org.mozilla.javascript.net.sf.retrotranslator.runtime.asm.signature.@1
 rule net.sf.hibernate.jca.* com.dotcms.repackage.hibernate.net.sf.hibernate.jca.@1
 rule org.apache.hadoop.fs.permission.* com.dotcms.repackage.hadoop_dev_core.org.apache.hadoop.fs.permission.@1
+rule org.github.jamm.* com.dotcms.repackage.jamm.org.github.jamm.@1
 rule org.bouncycastle.x509.examples.* com.dotcms.repackage.tika_app.org.bouncycastle.x509.examples.@1
 rule org.apache.lucene.analysis.cn.* com.dotcms.repackage.elasticsearch.org.apache.lucene.analysis.cn.@1
 rule org.exolab.castor.xml.schema.writer.* com.dotcms.repackage.castor.org.exolab.castor.xml.schema.writer.@1
