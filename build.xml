@@ -76,9 +76,6 @@
                 <exclude name="cactus.integration.ant_*"/><!--Ant build files complains if we repackage this jar-->
                 <exclude name="cargo-ant_*"/><!--Ant build files complains if we repackage this jar-->
                 <exclude name="quartz-all_*"/>
-                <exclude name="org.springframework*"/>
-                <exclude name="h2_*"/>
-                <exclude name="jruby-complete_*"/>
                 <!--FIXME-->
             </fileset>
 
