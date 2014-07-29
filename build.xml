@@ -123,7 +123,7 @@
                 will share the same repackaged name "jersey_X_YZ" resulting in com.dot.repackage.jersey_X_YZ.xxx.yyy
                 Required mostly when jars share the same packaging
             -->
-            <namingrule pattern="jersey" replacement="jersey"/>
+            <!--<namingrule pattern="jersey" replacement="jersey"/>
             <namingrule pattern="lucene" replacement="elasticsearch"/>
             <namingrule pattern="elasticsearch" replacement="elasticsearch"/>
             <namingrule pattern="sslext" replacement="struts"/>
@@ -134,7 +134,7 @@
             <namingrule pattern="commons-jci" replacement="commons_jci"/>
             <namingrule pattern="xalan" replacement="tika_app"/>
             <namingrule pattern="tika" replacement="tika_app"/>
-            <namingrule pattern="nekohtml" replacement="tika_app"/>
+            <namingrule pattern="nekohtml" replacement="tika_app"/>-->
 
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--++++++++++++++Resources+++++++++++++++-->
