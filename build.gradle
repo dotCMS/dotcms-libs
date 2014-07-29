@@ -41,11 +41,11 @@ uploadArchives(){
                 pom(fileName).artifactId = jarInfo.artifactId
                 pom(fileName).version = jarInfo.getVersion()
                 pom(fileName).groupId = publishProperties.groupId
-                pom(fileName).project {
+                /*pom(fileName).project {
                     build {
                         finalName '${artifactId}_${version}'
                     }
-                }
+                }*/
 
                 //Some feedback
                 println " --> Preparing to upload: " + jarFile.name
