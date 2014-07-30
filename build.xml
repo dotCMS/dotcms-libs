@@ -114,7 +114,6 @@
             <dependency path="${basedir}/cargo-ant_"/>
             <dependency path="${basedir}/quartz-all_"/>
             <dependency path="${basedir}/ant-tooling_"/>
-            <dependency path="${basedir}/jarjar_"/>
 
             <!--
             Explicit naming rules for jars
