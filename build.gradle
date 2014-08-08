@@ -1,0 +1,148 @@
+apply plugin:'java'
+apply plugin:'maven'
+
+import org.gradle.api.internal.artifacts.publish.DefaultPublishArtifact
+
+task publishProperties {
+    ext.groupId = 'com.dotcms.lib'
+    ext.repository = "http://repo.dotcms.com/artifactory/ext-release-local"
+    ext.validatonURL = "http://repo.dotcms.com/artifactory/simple/ext-release-local/"
+    ext.username = 'user.name'
+    ext.password = 'XYZ'
+}
+
+FileTree artifactsFolderTree
+
+artifacts{
+
+    artifactsFolderTree = fileTree(dir: 'build', includes: ['dot.*.jar'])
+    //Iterate over the contents of the tree
+    artifactsFolderTree.each {File file ->
+
+        def fileName = file.name.replace(".jar", "")
+        archives new DefaultPublishArtifact(fileName, "jar", "jar", null, new Date(), file)
+    }
+}
+
+uploadArchives(){
+    repositories {
+        mavenDeployer {
+
+            artifactsFolderTree.each{ File jarFile ->
+
+                JarInfo jarInfo = new JarInfo(jarFile.name, publishProperties.groupId, publishProperties.validatonURL);
+                def fileName = jarInfo.fileName
+
+                addFilter(fileName) {artifact, file ->
+                    artifact.name == fileName
+                }
+
+                //Setting the properties for the pom and artifactory
+                pom(fileName).artifactId = jarInfo.artifactId
+                pom(fileName).version = jarInfo.getVersion()
+                pom(fileName).groupId = publishProperties.groupId
+                /*pom(fileName).project {
+                    build {
+                        finalName '${artifactId}_${version}'
+                    }
+                }*/
+
+                //Some feedback
+                println " --> Preparing to upload: " + jarFile.name
+                println "\tgroupId: " + publishProperties.groupId
+                println "\tartifactId: " + jarInfo.artifactId
+                println "\tversion: " + jarInfo.getVersion()
+            }
+
+            repository(url: publishProperties.repository) {
+                authentication(userName: publishProperties.username, password: publishProperties.password)
+            }
+        }
+
+    }
+}
+
+buildscript {
+    repositories {
+        maven {
+            url "http://repo.dotcms.com/artifactory/libs-release"
+        }
+    }
+    dependencies {
+        classpath 'commons-httpclient:commons-httpclient:3.1'
+    }
+}
+
+import org.apache.commons.httpclient.HttpClient
+import org.apache.commons.httpclient.methods.GetMethod
+class JarInfo {
+
+    String fileName
+    String groupId
+    String artifactId
+    String jarVersion
+    String dotVersion
+    String validationURL
+    Boolean exist
+
+    JarInfo(String jarName, String group, String artifactoryValidationURL) {
+
+        validationURL = artifactoryValidationURL
+        fileName = jarName.replace(".jar", "")
+        groupId = group
+        artifactId = fileName
+
+        String[] nameArray = artifactId.split("_")
+        artifactId = nameArray[0]
+        jarVersion = nameArray[1]
+        dotVersion = "1"//Lets start with this version and lets search in artifactory the real dotcms version
+
+        //Search for the next allowed version to upload
+        dotVersion = searchDotVersion(dotVersion)
+    }
+
+    /**
+     * Given and initial dot version this method will search for the latest available version in artifactory.
+     * @param currentDotVersion
+     * @return
+     */
+    private String searchDotVersion (String currentDotVersion) {
+
+        dotVersion = currentDotVersion
+
+        //Create the URL in order to check if the artifact exist in artifactory
+        String groupFragmentPath = groupId.replace(".", "/")
+        String url = validationURL + groupFragmentPath + '/' + artifactId + '/' + getVersion() + '/' + artifactId + "-" + getVersion() + ".jar"
+
+        //Validate if this version exist on the artifactory repo
+        exist = exist(url)
+
+        if (exist) {
+            //Exist lets try again to see if we find a version that does not exist
+            dotVersion = Integer.parseInt(dotVersion) + 1
+            return searchDotVersion(dotVersion)
+        } else {
+            //We found a version that does not exist on artifactory
+            return dotVersion
+        }
+    }
+
+    public String getVersion () {
+        return jarVersion + "_" + dotVersion
+    }
+
+    private Boolean exist (String url) {
+
+        HttpClient client = new HttpClient();
+        GetMethod method = new GetMethod( url );
+
+        //Hit the url
+        int status = client.executeMethod(method);
+        if(status == 200){
+            return true
+        }
+
+        return false
+    }
+
+}

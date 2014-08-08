@@ -25,6 +25,7 @@ public class PackagerTask extends JarJarTask {
     private String outputFolder;
     private String outputFile;
     private String prefix;
+    private String versionSeparator;
     private String onlyJar;
     private boolean multipleJars;
 
@@ -76,7 +77,8 @@ public class PackagerTask extends JarJarTask {
                 if ( fileSet.getDirectoryScanner() != null && fileSet.getDirectoryScanner().getIncludedFiles() != null ) {
                     for ( String file : fileSet.getDirectoryScanner().getIncludedFiles() ) {
 
-                        File fileToInspect = new File( fileSet.getDirectoryScanner().getBasedir().getAbsolutePath() + File.separator + file );
+                        String pathFileToInspect = fileSet.getDirectoryScanner().getBasedir().getAbsolutePath() + File.separator + file;
+                        File fileToInspect = new File( pathFileToInspect );
 
                         //Global list of jars to repackage
                         if ( !toTransform.contains( fileToInspect ) ) {
@@ -90,6 +92,52 @@ public class PackagerTask extends JarJarTask {
                             }
                         } else {
                             inspector.inspect( fileToInspect );
+                        }
+
+                        /*
+                         For jar dependencies we are not adding the full name of the jar, we are using the fragment
+                         before the version in order to avoid changes each time a new version of a jar is added.
+
+                          Example: A old dependency would be:
+
+                            "${basedir}/mime-util_2.1.3.jar"
+
+                            now it will be:
+
+                            "${basedir}/mime-util_"
+
+                         So this loop intends to find out what jar are we referring to
+                          */
+                        for ( Dependency dependency : dependencies ) {
+                            if ( pathFileToInspect.startsWith( dependency.getPath() ) ) {
+                                dependency.setPath( pathFileToInspect );
+                            }
+                        }
+                    }
+
+                    if ( fileSet.getDirectoryScanner() != null && fileSet.getDirectoryScanner().getExcludedFiles() != null ) {
+                        /*
+                         For jar dependencies we are not adding the full name of the jar, we are using the fragment
+                         before the version in order to avoid changes each time a new version of a jar is added.
+
+                          Example: A old dependency would be:
+
+                            "${basedir}/mime-util_2.1.3.jar"
+
+                            now it will be:
+
+                            "${basedir}/mime-util_"
+
+                         So this loop intends to find out what jar are we referring to
+                          */
+                        for ( String file : fileSet.getDirectoryScanner().getExcludedFiles() ) {
+
+                            String pathFileToInspect = fileSet.getDirectoryScanner().getBasedir().getAbsolutePath() + File.separator + file;
+                            for ( Dependency dependency : dependencies ) {
+                                if ( pathFileToInspect.startsWith( dependency.getPath() ) ) {
+                                    dependency.setPath( pathFileToInspect );
+                                }
+                            }
                         }
                     }
                 }
@@ -399,11 +447,14 @@ public class PackagerTask extends JarJarTask {
                     continue;
                 }
 
-                //Create a name to be part of the resulting package name
+                /*//Create a name to be part of the resulting package name
                 String jarNameForPackage = jarFile.getName().substring( 0, jarFile.getName().lastIndexOf( "." ) );
+                //But first lets split the jar name and the version
+                String jarNameParts[] = jarNameForPackage.split( getVersionSeparator() );
+                jarNameForPackage = jarNameParts[0];//Use only the jar name excluding the version
                 jarNameForPackage = jarNameForPackage.replaceAll( "-", "_" );
                 jarNameForPackage = jarNameForPackage.replaceAll( "\\.", "_" );
-                jarNameForPackage = jarNameForPackage.toLowerCase();
+                jarNameForPackage = jarNameForPackage.toLowerCase();*/
 
                 /*
                  Verify if we have some explicit naming rules for this jar.
@@ -411,19 +462,20 @@ public class PackagerTask extends JarJarTask {
                     Example: all the jars that contains the word jersey (jersey-client-1.12.jar, jersey-core-1.12.jar, jersey-json-1.12.jar, etc)
                     will share the same repackaged name "jersey_1_12" --> com.dot.repackage.jersey_1_12
                  */
-                for ( NamingRule namingRule : namingRules ) {
+                /*for ( NamingRule namingRule : namingRules ) {
                     if ( jarNameForPackage.contains( namingRule.getPattern() ) ) {
                         jarNameForPackage = namingRule.getReplacement();
                         break;
                     }
                 }
+                String result = "com.dotcms.repackage." + jarNameForPackage + "." + packageName + ".@1";*/
 
                 //Create the rule for this class and add it to the list of rules for this jar
                 String pattern = packageName + ".*";//Example: "org.apache.xerces.dom.*"
                 if ( packageName.equals( "org.elasticsearch.common.joda.time.tz" ) ) {//For this package we can not be so strict as is not contains .class files but instead a lot of resources
                     pattern = packageName + ".**";//Example: "org.apache.xerces.dom.**"
                 }
-                String result = "com.dotcms.repackage." + jarNameForPackage + "." + packageName + ".@1";
+                String result = "com.dotcms.repackage." + packageName + ".@1";
 
                 CustomRule rule = new CustomRule();
                 rule.setPattern( pattern );
@@ -875,6 +927,14 @@ public class PackagerTask extends JarJarTask {
 
     public void setPrefix ( String prefix ) {
         this.prefix = prefix;
+    }
+
+    public String getVersionSeparator () {
+        return versionSeparator;
+    }
+
+    public void setVersionSeparator ( String versionSeparator ) {
+        this.versionSeparator = versionSeparator;
     }
 
     public boolean isMultipleJars () {
