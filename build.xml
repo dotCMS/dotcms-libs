@@ -72,6 +72,7 @@
                 <exclude name="felix_*"/>
                 <exclude name="lesscss_*"/>
                 <exclude name="rhino_*"/>
+                <exclude name="compass-gems_*"/>
                 <!--We CAN repackage them but applying special rules-->
 
                 <!--FIXME-->
