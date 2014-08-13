@@ -482,9 +482,37 @@ public class PackagerTask extends JarJarTask {
                 rule.setResult( result );
                 rule.setParent( jarFile.getName() );
 
-                //Global list of rules to apply
+                //Add the created Rule to the global list of rules to apply
                 if ( !rulesToApply.containsKey( pattern + result ) ) {
                     rulesToApply.put( pattern + result, rule );
+                }
+
+                //Get the list of prefixes for this jar
+                List<Dependency.Prefix> prefixes = getPrefixes( jarFile );
+                if ( prefixes != null ) {
+
+                    for ( Dependency.Prefix packagePrefix : prefixes ) {
+
+                        /*
+                         Create an extra Rule for each Prefix defined for this jar.
+                         */
+                        String newPattern = packagePrefix.getName() + pattern;
+                        String newResult = packagePrefix.getName() + result;
+
+                        if ( !packagePrefix.getStrict() && newPattern.endsWith( ".*" ) ) {
+                            newPattern += "*";
+                        }
+
+                        rule = new CustomRule();
+                        rule.setPattern( newPattern );
+                        rule.setResult( newResult );
+                        rule.setParent( jarFile.getName() );
+
+                        //Add the created Rule to the global list of rules to apply
+                        if ( !rulesToApply.containsKey( newPattern + newResult ) ) {
+                            rulesToApply.put( newPattern + newResult, rule );
+                        }
+                    }
                 }
 
             }
@@ -773,6 +801,29 @@ public class PackagerTask extends JarJarTask {
         }
 
         return ignorePackage;
+    }
+
+    /**
+     * Returns a list of defined prefixes for a dependency
+     *
+     * @param jarFile
+     * @return
+     */
+    private List<Dependency.Prefix> getPrefixes ( File jarFile ) {
+
+        List<Dependency.Prefix> prefixes = null;
+
+        //Find the defined prefixes for this jar
+        for ( Dependency dependency : dependencies ) {
+
+            File owner = new File( dependency.getPath() );
+            if ( jarFile.getName().equals( owner.getName() ) ) {
+                prefixes = dependency.getPrefixes();
+                break;
+            }
+        }
+
+        return prefixes;
     }
 
     /**

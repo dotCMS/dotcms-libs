@@ -13,7 +13,8 @@ public class Dependency {
     private boolean renameServices;
     private String path;
 
-    private List<Ignore> toIgnore = new ArrayList<Ignore>();
+    private List<Ignore> toIgnore = new ArrayList<>();
+    private List<Prefix> prefixes = new ArrayList<>();
 
     public Dependency () {
     }
@@ -46,11 +47,47 @@ public class Dependency {
         return toIgnore;
     }
 
+    public List<Prefix> getPrefixes () {
+        return prefixes;
+    }
+
     public Ignore createIgnore () {
         Ignore ignore = new Ignore();
         toIgnore.add( ignore );
 
         return ignore;
+    }
+
+    public Prefix createPrefix () {
+        Prefix prefix = new Prefix();
+        prefixes.add( prefix );
+
+        return prefix;
+    }
+
+    /**
+     * Inner class to add the ability to add prefixes to the dependencies.
+     */
+    public class Prefix {
+
+        private String name;
+        private Boolean strict = true;
+
+        public String getName () {
+            return name;
+        }
+
+        public void setName ( String name ) {
+            this.name = name;
+        }
+
+        public Boolean getStrict () {
+            return strict;
+        }
+
+        public void setStrict ( Boolean strict ) {
+            this.strict = strict;
+        }
     }
 
     public class Ignore {
