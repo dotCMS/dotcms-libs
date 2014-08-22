@@ -15,7 +15,7 @@ FileTree artifactsFolderTree
 
 artifacts{
 
-    artifactsFolderTree = fileTree(dir: 'build', includes: ['dot.*.jar'])
+    artifactsFolderTree = fileTree(dir: 'build', includes: ['*.jar'])
     //Iterate over the contents of the tree
     artifactsFolderTree.each {File file ->
 
