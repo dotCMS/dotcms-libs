@@ -102,6 +102,9 @@ public class Dependency {
         }
     }
 
+    /**
+     * Inner class that allows to specify packages to exclude for the repackaging process
+     */
     public class Ignore {
 
         private String parentPackage;
@@ -116,6 +119,9 @@ public class Dependency {
 
     }
 
+    /**
+     * Inner class to add the ability to add extra rules for cases that are not handle by the generated ones.
+     */
     public class ExtraRule {
 
         private String pattern;
