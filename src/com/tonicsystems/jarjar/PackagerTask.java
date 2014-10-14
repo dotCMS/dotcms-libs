@@ -515,6 +515,30 @@ public class PackagerTask extends JarJarTask {
                     }
                 }
 
+                //Get the list of extra rules for this jar
+                List<Dependency.ExtraRule> extraRules = getExtraRules( jarFile );
+                if ( extraRules != null ) {
+
+                    for ( Dependency.ExtraRule extraRule : extraRules ) {
+
+                        /*
+                         Create an extra Rule for each extra rule defined for this jar.
+                         */
+                        String newPattern = extraRule.getPattern();
+                        String newResult = extraRule.getResult();
+
+                        rule = new CustomRule();
+                        rule.setPattern( newPattern );
+                        rule.setResult( newResult );
+                        rule.setParent( jarFile.getName() );
+
+                        //Add the created Rule to the global list of rules to apply
+                        if ( !rulesToApply.containsKey( newPattern + newResult ) ) {
+                            rulesToApply.put( newPattern + newResult, rule );
+                        }
+                    }
+                }
+
             }
         }
     }
@@ -824,6 +848,29 @@ public class PackagerTask extends JarJarTask {
         }
 
         return prefixes;
+    }
+
+    /**
+     * Returns a list of defined extra rules for a dependency
+     *
+     * @param jarFile
+     * @return
+     */
+    private List<Dependency.ExtraRule> getExtraRules ( File jarFile ) {
+
+        List<Dependency.ExtraRule> extraRules = null;
+
+        //Find the defined extra rules for this jar
+        for ( Dependency dependency : dependencies ) {
+
+            File owner = new File( dependency.getPath() );
+            if ( jarFile.getName().equals( owner.getName() ) ) {
+                extraRules = dependency.getExtraRules();
+                break;
+            }
+        }
+
+        return extraRules;
     }
 
     /**

@@ -874,8 +874,8 @@ rule webapps.datanode.WEB-INF.* com.dotcms.repackage.webapps.datanode.WEB-INF.@1
 rule com.ibm.icu.impl.data.icudt40b.rbnf.* com.dotcms.repackage.com.ibm.icu.impl.data.icudt40b.rbnf.@1
 rule org.owasp.esapi.codecs.* com.dotcms.repackage.org.owasp.esapi.codecs.@1
 rule de.l3s.boilerpipe.estimators.* com.dotcms.repackage.de.l3s.boilerpipe.estimators.@1
-rule org.junit.runners.* com.dotcms.repackage.org.junit.runners.@1
 rule org.directwebremoting.export.* com.dotcms.repackage.org.directwebremoting.export.@1
+rule org.junit.runners.* com.dotcms.repackage.org.junit.runners.@1
 rule org.jaxen.util.* com.dotcms.repackage.org.jaxen.util.@1
 rule org.apache.http.impl.pool.* com.dotcms.repackage.org.apache.http.impl.pool.@1
 rule com.sun.xml.ws.transport.* com.dotcms.repackage.com.sun.xml.ws.transport.@1
@@ -1953,6 +1953,7 @@ rule com.google.common.base.internal.* com.dotcms.repackage.com.google.common.ba
 rule org.apache.solr.util.* com.dotcms.repackage.org.apache.solr.util.@1
 rule org.directwebremoting.ui.* com.dotcms.repackage.org.directwebremoting.ui.@1
 rule org.apache.tika.parser.video.* com.dotcms.repackage.org.apache.tika.parser.video.@1
+rule org.elasticsearch com.dotcms.repackage.org.elasticsearch
 rule org.directwebremoting.guice.* com.dotcms.repackage.org.directwebremoting.guice.@1
 rule net.sf.hibernate.xml.* com.dotcms.repackage.net.sf.hibernate.xml.@1
 rule org.apache.xpath.* com.dotcms.repackage.org.apache.xpath.@1
