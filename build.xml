@@ -119,6 +119,10 @@
                 <prefix name="Packages." strict="false"/>
             </dependency>
 
+            <dependency path="${basedir}/elasticsearch_" generate="true" renameservices="true">
+                <extraRule pattern="org.elasticsearch" result="com.dotcms.repackage.org.elasticsearch"/>
+            </dependency>
+
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--List of dependencies to check if there are dependencies to old packages -->
             <dependency path="${basedir}/cactus.integration.ant_"/>

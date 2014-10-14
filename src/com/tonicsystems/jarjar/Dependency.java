@@ -15,6 +15,7 @@ public class Dependency {
 
     private List<Ignore> toIgnore = new ArrayList<>();
     private List<Prefix> prefixes = new ArrayList<>();
+    private List<ExtraRule> extraRules = new ArrayList<>();
 
     public Dependency () {
     }
@@ -51,6 +52,10 @@ public class Dependency {
         return prefixes;
     }
 
+    public List<ExtraRule> getExtraRules () {
+        return extraRules;
+    }
+
     public Ignore createIgnore () {
         Ignore ignore = new Ignore();
         toIgnore.add( ignore );
@@ -63,6 +68,13 @@ public class Dependency {
         prefixes.add( prefix );
 
         return prefix;
+    }
+
+    public ExtraRule createExtraRule () {
+        ExtraRule extraRule = new ExtraRule();
+        extraRules.add( extraRule );
+
+        return extraRule;
     }
 
     /**
@@ -102,6 +114,28 @@ public class Dependency {
             this.parentPackage = parentPackage;
         }
 
+    }
+
+    public class ExtraRule {
+
+        private String pattern;
+        private String result;
+
+        public String getPattern () {
+            return pattern;
+        }
+
+        public void setPattern ( String pattern ) {
+            this.pattern = pattern;
+        }
+
+        public String getResult () {
+            return result;
+        }
+
+        public void setResult ( String result ) {
+            this.result = result;
+        }
     }
 
 }
