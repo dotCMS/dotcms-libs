@@ -293,6 +293,7 @@ rule org.apache.hadoop.log.* com.dotcms.repackage.org.apache.hadoop.log.@1
 rule org.openxmlformats.schemas.officeDocument.x2006.relationships.* com.dotcms.repackage.org.openxmlformats.schemas.officeDocument.x2006.relationships.@1
 rule com.sun.jersey.api.wadl.config.* com.dotcms.repackage.com.sun.jersey.api.wadl.config.@1
 rule ucar.nc2.iosp.grib.tables.* com.dotcms.repackage.ucar.nc2.iosp.grib.tables.@1
+rule org.jgroups.protocols.relay.config.* com.dotcms.repackage.org.jgroups.protocols.relay.config.@1
 rule org.elasticsearch.search.internal.* com.dotcms.repackage.org.elasticsearch.search.internal.@1
 rule com.ettrema.common.* com.dotcms.repackage.com.ettrema.common.@1
 rule org.drools.asm.commons.* com.dotcms.repackage.org.drools.asm.commons.@1
@@ -631,6 +632,7 @@ rule org.elasticsearch.discovery.zen.ping.* com.dotcms.repackage.org.elasticsear
 rule org.jaxen.pattern.* com.dotcms.repackage.org.jaxen.pattern.@1
 rule org.apache.struts.tiles.definition.* com.dotcms.repackage.org.apache.struts.tiles.definition.@1
 rule resources.schema.xhtml.element.* com.dotcms.repackage.resources.schema.xhtml.element.@1
+rule org.jgroups.protocols.tom.* com.dotcms.repackage.org.jgroups.protocols.tom.@1
 rule de.l3s.boilerpipe.* com.dotcms.repackage.de.l3s.boilerpipe.@1
 rule org.apache.xml.dtm.ref.* com.dotcms.repackage.org.apache.xml.dtm.ref.@1
 rule com.novell.ldap.events.* com.dotcms.repackage.com.novell.ldap.events.@1
@@ -1025,8 +1027,8 @@ rule org.jboss.util.property.jmx.* com.dotcms.repackage.org.jboss.util.property.
 rule net.sf.cglib.util.* com.dotcms.repackage.net.sf.cglib.util.@1
 rule ucar.nc2.util.net.* com.dotcms.repackage.ucar.nc2.util.net.@1
 rule com.sun.jersey.api.container.* com.dotcms.repackage.com.sun.jersey.api.container.@1
-rule org.elasticsearch.search.facet.geodistance.* com.dotcms.repackage.org.elasticsearch.search.facet.geodistance.@1
 rule net.sf.cglib.asm.signature.* com.dotcms.repackage.net.sf.cglib.asm.signature.@1
+rule org.elasticsearch.search.facet.geodistance.* com.dotcms.repackage.org.elasticsearch.search.facet.geodistance.@1
 rule org.elasticsearch.search.aggregations.bucket.significant.heuristics.* com.dotcms.repackage.org.elasticsearch.search.aggregations.bucket.significant.heuristics.@1
 rule com.ctc.wstx.dom.* com.dotcms.repackage.com.ctc.wstx.dom.@1
 rule org.directwebremoting.ui.browser.* com.dotcms.repackage.org.directwebremoting.ui.browser.@1
@@ -1343,6 +1345,7 @@ rule org.bouncycastle.crypto.generators.* com.dotcms.repackage.org.bouncycastle.
 rule org.mockito.internal.matchers.apachecommons.* com.dotcms.repackage.org.mockito.internal.matchers.apachecommons.@1
 rule ucar.nc2.iosp.fysat.* com.dotcms.repackage.ucar.nc2.iosp.fysat.@1
 rule org.apache.xml.utils.* com.dotcms.repackage.org.apache.xml.utils.@1
+rule org.jgroups.protocols.rules.* com.dotcms.repackage.org.jgroups.protocols.rules.@1
 rule org.apache.axiom.soap.impl.llom.* com.dotcms.repackage.org.apache.axiom.soap.impl.llom.@1
 rule org.codehaus.cargo.module.webapp.orion.* com.dotcms.repackage.org.codehaus.cargo.module.webapp.orion.@1
 rule org.codehaus.groovy.runtime.powerassert.* com.dotcms.repackage.org.codehaus.groovy.runtime.powerassert.@1
@@ -1424,6 +1427,7 @@ rule org.elasticsearch.search.fetch.matchedqueries.* com.dotcms.repackage.org.el
 rule org.elasticsearch.watcher.* com.dotcms.repackage.org.elasticsearch.watcher.@1
 rule com.sun.jersey.core.impl.provider.header.* com.dotcms.repackage.com.sun.jersey.core.impl.provider.header.@1
 rule schemaorg_apache_xmlbeans.element.URI_SHA_1_5AAF5BEFD4F30D215E94ED53118FE32C537C3B26.* com.dotcms.repackage.schemaorg_apache_xmlbeans.element.URI_SHA_1_5AAF5BEFD4F30D215E94ED53118FE32C537C3B26.@1
+rule org.jgroups.fork.* com.dotcms.repackage.org.jgroups.fork.@1
 rule net.sf.cglib.reflect.* com.dotcms.repackage.net.sf.cglib.reflect.@1
 rule org.junit.experimental.theories.internal.* com.dotcms.repackage.org.junit.experimental.theories.internal.@1
 rule com.jhlabs.math.* com.dotcms.repackage.com.jhlabs.math.@1
@@ -1447,6 +1451,7 @@ rule org.codehaus.stax2.osgi.* com.dotcms.repackage.org.codehaus.stax2.osgi.@1
 rule org.elasticsearch.index.shard.* com.dotcms.repackage.org.elasticsearch.index.shard.@1
 rule com.sun.jersey.server.impl.resource.* com.dotcms.repackage.com.sun.jersey.server.impl.resource.@1
 rule org.apache.commons.net.nntp.* com.dotcms.repackage.org.apache.commons.net.nntp.@1
+rule org.jgroups.protocols.relay.* com.dotcms.repackage.org.jgroups.protocols.relay.@1
 rule org.apache.poi.ss.usermodel.charts.* com.dotcms.repackage.org.apache.poi.ss.usermodel.charts.@1
 rule org.apache.tika.parser.executable.* com.dotcms.repackage.org.apache.tika.parser.executable.@1
 rule com.sun.xml.ws.resources.* com.dotcms.repackage.com.sun.xml.ws.resources.@1
@@ -1799,6 +1804,7 @@ rule org.directwebremoting.json.parse.* com.dotcms.repackage.org.directwebremoti
 rule groovy.lang.* com.dotcms.repackage.groovy.lang.@1
 rule com.drew.imaging.* com.dotcms.repackage.com.drew.imaging.@1
 rule com.sun.xml.ws.org.objectweb.asm.* com.dotcms.repackage.com.sun.xml.ws.org.objectweb.asm.@1
+rule org.jgroups.auth.sasl.* com.dotcms.repackage.org.jgroups.auth.sasl.@1
 rule org.directwebremoting.jsp.* com.dotcms.repackage.org.directwebremoting.jsp.@1
 rule org.elasticsearch.gateway.local.state.meta.* com.dotcms.repackage.org.elasticsearch.gateway.local.state.meta.@1
 rule org.elasticsearch.common.blobstore.support.* com.dotcms.repackage.org.elasticsearch.common.blobstore.support.@1
@@ -1835,9 +1841,9 @@ rule org.apache.commons.validator.util.* com.dotcms.repackage.org.apache.commons
 rule org.drools.asm.util.attrs.* com.dotcms.repackage.org.drools.asm.util.attrs.@1
 rule org.codehaus.cargo.container.internal.resources.resin2x.* com.dotcms.repackage.org.codehaus.cargo.container.internal.resources.resin2x.@1
 rule com.ibm.icu.* com.dotcms.repackage.com.ibm.icu.@1
+rule org.elasticsearch.rest.action.admin.indices.exists.indices.* com.dotcms.repackage.org.elasticsearch.rest.action.admin.indices.exists.indices.@1
 rule org.apache.solr.search.function.* com.dotcms.repackage.org.apache.solr.search.function.@1
 rule org.elasticsearch.action.admin.cluster.snapshots.get.* com.dotcms.repackage.org.elasticsearch.action.admin.cluster.snapshots.get.@1
-rule org.elasticsearch.rest.action.admin.indices.exists.indices.* com.dotcms.repackage.org.elasticsearch.rest.action.admin.indices.exists.indices.@1
 rule org.apache.hadoop.mapreduce.lib.output.* com.dotcms.repackage.org.apache.hadoop.mapreduce.lib.output.@1
 rule org.codehaus.jackson.io.* com.dotcms.repackage.org.codehaus.jackson.io.@1
 rule org.apache.xmlbeans.impl.jam.internal.reflect.* com.dotcms.repackage.org.apache.xmlbeans.impl.jam.internal.reflect.@1
@@ -2028,7 +2034,6 @@ rule org.directwebremoting.guice.* com.dotcms.repackage.org.directwebremoting.gu
 rule net.sf.hibernate.xml.* com.dotcms.repackage.net.sf.hibernate.xml.@1
 rule org.apache.xpath.* com.dotcms.repackage.org.apache.xpath.@1
 rule org.antlr.tool.templates.messages.formats.* com.dotcms.repackage.org.antlr.tool.templates.messages.formats.@1
-rule org.jgroups.debug.* com.dotcms.repackage.org.jgroups.debug.@1
 rule org.drools.base.* com.dotcms.repackage.org.drools.base.@1
 rule org.apache.poi.hwpf.* com.dotcms.repackage.org.apache.poi.hwpf.@1
 rule org.apache.hadoop.hdfs.server.balancer.* com.dotcms.repackage.org.apache.hadoop.hdfs.server.balancer.@1
@@ -2398,7 +2403,6 @@ rule org.apache.chemistry.opencmis.server.impl.dummy.* com.dotcms.repackage.org.
 rule org.elasticsearch.common.netty.handler.timeout.* com.dotcms.repackage.org.elasticsearch.common.netty.handler.timeout.@1
 rule org.apache.lucene.analysis.ca.* com.dotcms.repackage.org.apache.lucene.analysis.ca.@1
 rule org.apache.xml.serialize.* com.dotcms.repackage.org.apache.xml.serialize.@1
-rule licenses.* com.dotcms.repackage.licenses.@1
 rule org.apache.tika.extractor.* com.dotcms.repackage.org.apache.tika.extractor.@1
 rule org.apache.abdera.ext.bidi.* com.dotcms.repackage.org.apache.abdera.ext.bidi.@1
 rule org.apache.chemistry.opencmis.commons.* com.dotcms.repackage.org.apache.chemistry.opencmis.commons.@1
@@ -2530,7 +2534,6 @@ rule org.apache.solr.update.* com.dotcms.repackage.org.apache.solr.update.@1
 rule org.elasticsearch.repositories.uri.* com.dotcms.repackage.org.elasticsearch.repositories.uri.@1
 rule antlr.debug.* com.dotcms.repackage.antlr.debug.@1
 rule org.apache.xmlbeans.impl.piccolo.util.* com.dotcms.repackage.org.apache.xmlbeans.impl.piccolo.util.@1
-rule org.jgroups.mux.* com.dotcms.repackage.org.jgroups.mux.@1
 rule org.codehaus.groovy.runtime.m12n.* com.dotcms.repackage.org.codehaus.groovy.runtime.m12n.@1
 rule org.elasticsearch.index.query.functionscore.weight.* com.dotcms.repackage.org.elasticsearch.index.query.functionscore.weight.@1
 rule org.apache.commons.digester.* com.dotcms.repackage.org.apache.commons.digester.@1
@@ -2666,6 +2669,7 @@ rule org.elasticsearch.common.primitives.* com.dotcms.repackage.org.elasticsearc
 rule schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.ComplexContentDocument.* com.dotcms.repackage.schemaorg_apache_xmlbeans.javaname.org.apache.xmlbeans.impl.xb.xsdschema.ComplexContentDocument.@1
 rule org.exolab.castor.xml.schema.simpletypes.* com.dotcms.repackage.org.exolab.castor.xml.schema.simpletypes.@1
 rule net.sf.hibernate.cache.* com.dotcms.repackage.net.sf.hibernate.cache.@1
+rule org.jgroups.blocks.atomic.* com.dotcms.repackage.org.jgroups.blocks.atomic.@1
 rule org.xerial.snappy.* com.dotcms.repackage.org.xerial.snappy.@1
 rule org.drools.asm.signature.* com.dotcms.repackage.org.drools.asm.signature.@1
 rule org.bouncycastle.ocsp.* com.dotcms.repackage.org.bouncycastle.ocsp.@1
@@ -2814,7 +2818,6 @@ rule org.jfree.chart.encoders.* com.dotcms.repackage.org.jfree.chart.encoders.@1
 rule org.openxmlformats.schemas.drawingml.x2006.chart.impl.* com.dotcms.repackage.org.openxmlformats.schemas.drawingml.x2006.chart.impl.@1
 rule org.bouncycastle.util.* com.dotcms.repackage.org.bouncycastle.util.@1
 rule org.elasticsearch.action.admin.cluster.node.hotthreads.* com.dotcms.repackage.org.elasticsearch.action.admin.cluster.node.hotthreads.@1
-rule org.jgroups.persistence.* com.dotcms.repackage.org.jgroups.persistence.@1
 rule org.w3c.dom.traversal.* com.dotcms.repackage.org.w3c.dom.traversal.@1
 rule org.bouncycastle.asn1.teletrust.* com.dotcms.repackage.org.bouncycastle.asn1.teletrust.@1
 rule org.apache.xerces.xni.grammars.* com.dotcms.repackage.org.apache.xerces.xni.grammars.@1
@@ -3358,7 +3361,6 @@ rule com.ibm.icu.impl.data.icudt40b.coll.* com.dotcms.repackage.com.ibm.icu.impl
 rule nl.captcha.backgrounds.* com.dotcms.repackage.nl.captcha.backgrounds.@1
 rule org.elasticsearch.index.cache.* com.dotcms.repackage.org.elasticsearch.index.cache.@1
 rule org.apache.xalan.xsltc.dom.* com.dotcms.repackage.org.apache.xalan.xsltc.dom.@1
-rule org.jgroups.tests.perf.transports.* com.dotcms.repackage.org.jgroups.tests.perf.transports.@1
 rule org.apache.pdfbox.resources.ttf.* com.dotcms.repackage.org.apache.pdfbox.resources.ttf.@1
 rule com.lowagie.text.* com.dotcms.repackage.com.lowagie.text.@1
 rule org.apache.abdera.i18n.text.* com.dotcms.repackage.org.apache.abdera.i18n.text.@1
