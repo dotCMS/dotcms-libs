@@ -531,6 +531,7 @@ public class PackagerTask extends JarJarTask {
                         rule.setPattern( newPattern );
                         rule.setResult( newResult );
                         rule.setParent( jarFile.getName() );
+                        rule.setExtra(true);
 
                         //Add the created Rule to the global list of rules to apply
                         if ( !rulesToApply.containsKey( newPattern + newResult ) ) {
@@ -937,7 +938,7 @@ public class PackagerTask extends JarJarTask {
         log( "-----------------------------------------" );
         log( "Ordered Rules to apply: " );
         for ( CustomRule rule : rules ) {
-            rulesBuilder.append( "rule " ).append( rule.getPattern() ).append( " " ).append( rule.getResult() ).append( "\n" );
+            rulesBuilder.append( "rule " ).append( rule.getPattern() ).append( " " ).append( rule.getResult() ).append(" ").append(rule.isExtra()?"E":"").append( "\n" );
             log( rule.getPattern() + " --> " + rule.getResult() );
         }
 
