@@ -122,6 +122,17 @@
             <dependency path="${basedir}/elasticsearch_" generate="true" renameservices="true">
                 <extraRule pattern="org.elasticsearch" result="com.dotcms.repackage.org.elasticsearch"/>
             </dependency>
+        	
+        	<dependency path="${basedir}/bsh_" generate="true">
+	            <extraRule pattern="bsh.args" result="bsh.args"/>
+	        	<extraRule pattern="bsh.system" result="bsh.system"/>
+	        	<extraRule pattern="bsh.shared" result="bsh.shared"/>
+	        	<extraRule pattern="bsh.evalOnly" result="bsh.evalOnly"/> 
+	        	<extraRule pattern="bsh.console" result="bsh.console"/>	                
+	            <extraRule pattern="bsh.help" result="bsh.help"/>
+	            <extraRule pattern="bsh.cwd" result="bsh.cwd"/>
+	            <extraRule pattern="bsh.interactive" result="bsh.interactive"/>
+	        </dependency>
 
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--List of dependencies to check if there are dependencies to old packages -->
