@@ -58,8 +58,6 @@
                 <include name="*.jar"/>
 
                 <!--dotcms jars-->
-                <exclude name="dotcms_*"/><!--dotcms jar-->
-                <exclude name="ant-tooling_*"/>
                 <exclude name="jarjar_*"/>
                 <!--dotcms jars-->
 
@@ -139,7 +137,6 @@
             <dependency path="${basedir}/cactus.integration.ant_"/>
             <dependency path="${basedir}/cargo-ant_"/>
             <dependency path="${basedir}/quartz-all_"/>
-            <dependency path="${basedir}/ant-tooling_"/>
 
             <!--
             Explicit naming rules for jars
