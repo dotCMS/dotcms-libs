@@ -345,6 +345,7 @@ rule org.apache.http.impl.client.* com.dotcms.repackage.org.apache.http.impl.cli
 rule org.elasticsearch.index.suggest.* com.dotcms.repackage.org.elasticsearch.index.suggest.@1
 rule org.xhtmlrenderer.swing.* com.dotcms.repackage.org.xhtmlrenderer.swing.@1
 rule org.bouncycastle.jce.interfaces.* com.dotcms.repackage.org.bouncycastle.jce.interfaces.@1
+rule bsh.system bsh.system
 rule org.directwebremoting.dojo.* com.dotcms.repackage.org.directwebremoting.dojo.@1
 rule org.apache.hadoop.filecache.* com.dotcms.repackage.org.apache.hadoop.filecache.@1
 rule org.codehaus.stax2.* com.dotcms.repackage.org.codehaus.stax2.@1
@@ -666,6 +667,7 @@ rule org.elasticsearch.bulk.udp.* com.dotcms.repackage.org.elasticsearch.bulk.ud
 rule org.codehaus.jackson.annotate.* com.dotcms.repackage.org.codehaus.jackson.annotate.@1
 rule org.mockito.asm.signature.* com.dotcms.repackage.org.mockito.asm.signature.@1
 rule org.elasticsearch.indices.recovery.* com.dotcms.repackage.org.elasticsearch.indices.recovery.@1
+rule bsh.args bsh.args
 rule org.eclipse.mylyn.internal.wikitext.core.validation.* com.dotcms.repackage.org.eclipse.mylyn.internal.wikitext.core.validation.@1
 rule com.bradmcevoy.http.http11.auth.* com.dotcms.repackage.com.bradmcevoy.http.http11.auth.@1
 rule org.apache.poi.xslf.model.* com.dotcms.repackage.org.apache.poi.xslf.model.@1
@@ -882,6 +884,7 @@ rule org.xhtmlrenderer.css.extend.lib.* com.dotcms.repackage.org.xhtmlrenderer.c
 rule com.sun.syndication.io.impl.* com.dotcms.repackage.com.sun.syndication.io.impl.@1
 rule org.apache.lucene.queryparser.flexible.core.builders.* com.dotcms.repackage.org.apache.lucene.queryparser.flexible.core.builders.@1
 rule org.apache.fontbox.cff.charset.* com.dotcms.repackage.org.apache.fontbox.cff.charset.@1
+rule bsh.help bsh.help
 rule org.apache.hadoop.conf.* com.dotcms.repackage.org.apache.hadoop.conf.@1
 rule org.apache.xerces.impl.validation.* com.dotcms.repackage.org.apache.xerces.impl.validation.@1
 rule com.liferay.mail.model.* com.dotcms.repackage.com.liferay.mail.model.@1
@@ -894,6 +897,7 @@ rule org.elasticsearch.transport.local.* com.dotcms.repackage.org.elasticsearch.
 rule org.apache.felix.http.base.internal.util.* com.dotcms.repackage.org.apache.felix.http.base.internal.util.@1
 rule org.jboss.cache.lock.* com.dotcms.repackage.org.jboss.cache.lock.@1
 rule org.bouncycastle.asn1.microsoft.* com.dotcms.repackage.org.bouncycastle.asn1.microsoft.@1
+rule bsh.console bsh.console
 rule com.sun.xml.ws.transport.httpspi.servlet.* com.dotcms.repackage.com.sun.xml.ws.transport.httpspi.servlet.@1
 rule org.elasticsearch.index.codec.docvaluesformat.* com.dotcms.repackage.org.elasticsearch.index.codec.docvaluesformat.@1
 rule org.elasticsearch.common.joda.time.chrono.* com.dotcms.repackage.org.elasticsearch.common.joda.time.chrono.@1
@@ -1587,6 +1591,7 @@ rule org.apache.pdfbox.util.operator.* com.dotcms.repackage.org.apache.pdfbox.ut
 rule groovy.swing.binding.* com.dotcms.repackage.groovy.swing.binding.@1
 rule org.apache.commons.collections.comparators.* com.dotcms.repackage.org.apache.commons.collections.comparators.@1
 rule org.elasticsearch.index.store.support.* com.dotcms.repackage.org.elasticsearch.index.store.support.@1
+rule bsh.interactive bsh.interactive
 rule com.sun.xml.bind.v2.model.core.* com.dotcms.repackage.com.sun.xml.bind.v2.model.core.@1
 rule antlr.build.* com.dotcms.repackage.antlr.build.@1
 rule com.googlecode.mp4parser.authoring.container.mp4.* com.dotcms.repackage.com.googlecode.mp4parser.authoring.container.mp4.@1
@@ -3114,6 +3119,7 @@ rule org.elasticsearch.rest.action.admin.indices.warmer.get.* com.dotcms.repacka
 rule org.elasticsearch.repositories.* com.dotcms.repackage.org.elasticsearch.repositories.@1
 rule javax.xml.ws.handler.* com.dotcms.repackage.javax.xml.ws.handler.@1
 rule org.apache.xmlbeans.impl.xb.ltgfmt.* com.dotcms.repackage.org.apache.xmlbeans.impl.xb.ltgfmt.@1
+rule bsh.shared bsh.shared
 rule org.antlr.codegen.templates.Python.* com.dotcms.repackage.org.antlr.codegen.templates.Python.@1
 rule org.apache.felix.bundlerepository.impl.wrapper.* com.dotcms.repackage.org.apache.felix.bundlerepository.impl.wrapper.@1
 rule com.sun.istack.* com.dotcms.repackage.com.sun.istack.@1
@@ -3176,6 +3182,7 @@ rule org.bouncycastle.crypto.engines.* com.dotcms.repackage.org.bouncycastle.cry
 rule org.jboss.util.loading.* com.dotcms.repackage.org.jboss.util.loading.@1
 rule org.elasticsearch.action.admin.cluster.snapshots.restore.* com.dotcms.repackage.org.elasticsearch.action.admin.cluster.snapshots.restore.@1
 rule org.elasticsearch.common.lucene.all.* com.dotcms.repackage.org.elasticsearch.common.lucene.all.@1
+rule bsh.cwd bsh.cwd
 rule org.mozilla.classfile.* com.dotcms.repackage.org.mozilla.classfile.@1
 rule org.apache.commons.compress.archivers.tar.* com.dotcms.repackage.org.apache.commons.compress.archivers.tar.@1
 rule org.elasticsearch.rest.action.admin.cluster.repositories.put.* com.dotcms.repackage.org.elasticsearch.rest.action.admin.cluster.repositories.put.@1
@@ -3363,6 +3370,7 @@ rule org.elasticsearch.index.cache.* com.dotcms.repackage.org.elasticsearch.inde
 rule org.apache.xalan.xsltc.dom.* com.dotcms.repackage.org.apache.xalan.xsltc.dom.@1
 rule org.apache.pdfbox.resources.ttf.* com.dotcms.repackage.org.apache.pdfbox.resources.ttf.@1
 rule com.lowagie.text.* com.dotcms.repackage.com.lowagie.text.@1
+rule bsh.evalOnly bsh.evalOnly
 rule org.apache.abdera.i18n.text.* com.dotcms.repackage.org.apache.abdera.i18n.text.@1
 rule org.drools.decisiontable.* com.dotcms.repackage.org.drools.decisiontable.@1
 rule org.apache.lucene.store.* com.dotcms.repackage.org.apache.lucene.store.@1
