@@ -775,7 +775,7 @@ public class PackagerTask extends JarJarTask {
             //Getting the zaps for this jar
             List<Dependency.CustomZap> currentZaps = getCustomZaps(jars.iterator().next());
             if ( currentZaps != null ) {
-                zaps.addAll(getCustomZaps(jars.iterator().next()));
+                zaps.addAll(currentZaps);
             }
         }
 
