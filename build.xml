@@ -96,6 +96,7 @@
 
             <!--We have to exclude some packages in here, tomcat complains-->
             <dependency path="${basedir}/tika-app_" generate="true" renameservices="true">
+                <customZap pattern="org.apache.log4j.**"/>
                 <ignore parentpackage="org.apache.commons.logging"/>
                 <ignore parentpackage="org.slf4j"/>
                 <ignore parentpackage="license"/>
