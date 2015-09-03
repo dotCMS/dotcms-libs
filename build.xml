@@ -16,7 +16,7 @@
 
     <path id="files-classpath">
         <fileset dir="${basedir}">
-            <include name="jarjar_1.4.jar" />
+            <include name="jarjar_1.4.1.jar" />
             <include name="myspell_ukv.jar" />
         </fileset>
         <fileset dir="${basedir}/buildlibs">
@@ -197,7 +197,7 @@
     <!--PACKAGER-->
     <path id="packager-classpath">
         <fileset dir="${basedir}">
-            <include name="jarjar_1.4.jar"/>
+            <include name="jarjar_1.4.1.jar"/>
             <include name="myspell_ukv.jar"/>
         </fileset>
         <fileset dir="${basedir}/buildlibs">
@@ -256,7 +256,7 @@
 
         <property name="lib.classpath" refid="complete-classpath"/>
 
-        <java jar="jarjar_1.4.jar" fork="true">
+        <java jar="jarjar_1.4.1.jar" fork="true">
             <arg value="find"/>
             <arg value="jar"/>
             <arg value="${lib.classpath}"/>
@@ -268,7 +268,7 @@
 
         <property name="lib.classpath" refid="complete-classpath-exclude"/>
 
-        <java jar="jarjar_1.4.jar" fork="true">
+        <java jar="jarjar_1.4.1.jar" fork="true">
             <arg value="find"/>
             <arg value="jar"/>
 
@@ -282,7 +282,7 @@
 
         <property name="lib.classpath" refid="complete-classpath-exclude"/>
 
-        <java jar="jarjar_1.4.jar" fork="true">
+        <java jar="jarjar_1.4.1.jar" fork="true">
             <arg value="find"/>
             <arg value="jar"/>
             <!--<arg value="class"/>-->
