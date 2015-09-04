@@ -447,6 +447,16 @@ public class PackagerTask extends JarJarTask {
                     continue;
                 }
 
+                /*
+                Handle the packages we marked to be removed on this jar, meaning
+                if we want to remove a package from the jar we don't need to create rules
+                for that package.
+                 */
+                ignorePackage = zapPackage( jarFile, packageName );
+                if ( ignorePackage ) {
+                    continue;
+                }
+
                 /*//Create a name to be part of the resulting package name
                 String jarNameForPackage = jarFile.getName().substring( 0, jarFile.getName().lastIndexOf( "." ) );
                 //But first lets split the jar name and the version
@@ -733,9 +743,11 @@ public class PackagerTask extends JarJarTask {
 
         String originalFileName = outFile.getName().replace( getPrefix(), "" );
         //First lets sort the rules collection, first the rules created from this jar
-        List<CustomRule> rulesList = new ArrayList<CustomRule>( rules );
+        List<CustomRule> rulesList = new ArrayList<>(rules);
         Collections.sort( rulesList, new CustomRule().new RuleSortByParent( originalFileName ) );
-        
+
+        List<Dependency.CustomZap> zaps = new ArrayList<>();
+
         //Uncomment this line to validate that the reorder is working updating just one jar for debug
         //logRulesOrdered(rulesList);
         
@@ -752,11 +764,23 @@ public class PackagerTask extends JarJarTask {
 
                 //Add it to the fileset
                 addZipfileset( fileSet );
+
+                //Getting the zaps for this jar
+                List<Dependency.CustomZap> currentZaps = getCustomZaps(jar);
+                if ( currentZaps != null ) {
+                    zaps.addAll(currentZaps);
+                }
+            }
+        } else {
+            //Getting the zaps for this jar
+            List<Dependency.CustomZap> currentZaps = getCustomZaps(jars.iterator().next());
+            if ( currentZaps != null ) {
+                zaps.addAll(currentZaps);
             }
         }
 
-        //Prepare the rules for these groups of jar
-        List<PatternElement> patterns = new ArrayList<PatternElement>();
+        //Prepare the rules for these groups of jars
+        List<PatternElement> patterns = new ArrayList<>();
         for ( CustomRule rule : rulesList ) {
 
             if ( jars.size() == 1 ) {
@@ -771,6 +795,11 @@ public class PackagerTask extends JarJarTask {
                 addConfiguredRule( rule );
             }
             patterns.add( rule );
+        }
+
+        //Prepare the Zaps for these groups of jars
+        for ( Dependency.CustomZap zap : zaps ) {
+            patterns.add(zap);
         }
 
         //Generate the new jar
@@ -829,6 +858,48 @@ public class PackagerTask extends JarJarTask {
     }
 
     /**
+     * Verify if a package was marked to be Zap (Removed) on this jar
+     *
+     * @param jarFile
+     * @param packageName
+     * @return
+     */
+    private Boolean zapPackage ( File jarFile, String packageName ) {
+
+        packageName = packageName.replace( ".**", "" );
+        packageName = packageName.replace( ".*", "" );
+
+        //Handle the packages we marked to exclude by jar
+        Boolean ignorePackage = false;
+        for ( Dependency dependency : dependencies ) {
+
+            //Verify if we have packages to ignore on this dependency
+            List<Dependency.CustomZap> toIgnore = dependency.getCustomZaps();
+            if ( toIgnore != null && !toIgnore.isEmpty() ) {
+
+                for ( Dependency.CustomZap ignore : toIgnore ) {
+                    File owner = new File( dependency.getPath() );
+
+                    String zapPattern = ignore.getPattern();
+                    zapPattern = zapPattern.replace( ".**", "" );
+                    zapPattern = zapPattern.replace( ".*", "" );
+
+                    if ( packageName.startsWith( zapPattern ) && jarFile.getName().equals( owner.getName() ) ) {
+                        ignorePackage = true;
+                        break;
+                    }
+                }
+            }
+
+            if ( ignorePackage ) {
+                break;
+            }
+        }
+
+        return ignorePackage;
+    }
+
+    /**
      * Returns a list of defined prefixes for a dependency
      *
      * @param jarFile
@@ -872,6 +943,29 @@ public class PackagerTask extends JarJarTask {
         }
 
         return extraRules;
+    }
+
+    /**
+     * Returns a list of defined zap rules for a dependency
+     *
+     * @param jarFile
+     * @return
+     */
+    private List<Dependency.CustomZap> getCustomZaps ( File jarFile ) {
+
+        List<Dependency.CustomZap> customZaps = null;
+
+        //Find the defined custom zap rules for this jar
+        for ( Dependency dependency : dependencies ) {
+
+            File owner = new File( dependency.getPath() );
+            if ( jarFile.getName().equals( owner.getName() ) ) {
+                customZaps = dependency.getCustomZaps();
+                break;
+            }
+        }
+
+        return customZaps;
     }
 
     /**
