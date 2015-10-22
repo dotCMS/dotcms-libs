@@ -16,6 +16,7 @@ public class Dependency {
     private List<Ignore> toIgnore = new ArrayList<>();
     private List<Prefix> prefixes = new ArrayList<>();
     private List<ExtraRule> extraRules = new ArrayList<>();
+    private List<CustomZap> customZaps = new ArrayList<>();
 
     public Dependency () {
     }
@@ -56,6 +57,10 @@ public class Dependency {
         return extraRules;
     }
 
+    public List<CustomZap> getCustomZaps () {
+        return customZaps;
+    }
+
     public Ignore createIgnore () {
         Ignore ignore = new Ignore();
         toIgnore.add( ignore );
@@ -75,6 +80,13 @@ public class Dependency {
         extraRules.add( extraRule );
 
         return extraRule;
+    }
+
+    public CustomZap createCustomZap () {
+        CustomZap customZap = new CustomZap();
+        customZaps.add(customZap);
+
+        return customZap;
     }
 
     /**
@@ -142,6 +154,28 @@ public class Dependency {
         public void setResult ( String result ) {
             this.result = result;
         }
+    }
+
+    /**
+     * Inner class to add the ability to use Zap rules, a zap rule allow us to exclude content from a jar
+     */
+    public class CustomZap extends Zap {
+
+        private String parent;
+
+        public String getParent () {
+            return parent;
+        }
+
+        public void setParent ( String parent ) {
+            this.parent = parent;
+        }
+
+        @Override
+        public String toString () {
+            return getParent() + " > " + "[ " + getPattern() + " ]";
+        }
+
     }
 
 }
