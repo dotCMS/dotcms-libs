@@ -119,7 +119,7 @@
             </dependency>
 
             <dependency path="${basedir}/elasticsearch_" generate="true" renameservices="true">
-                <extraRule pattern="org.elasticsearch" result="com.dotcms.repackage.org.elasticsearch"/>
+            	<ignore parentpackage="org.elasticsearch"/>
             </dependency>
         	
         	<dependency path="${basedir}/bsh_" generate="true">
