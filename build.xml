@@ -93,6 +93,26 @@
             <dependency path="${basedir}/myspell_" generate="true">
                 <ignore parentpackage="org.apache.tools"/>
             </dependency>
+            
+            <dependency path="${basedir}/aws-java-sdk-core_" generate="true">
+                <ignore parentpackage="org.apache.http"/>
+                <ignore parentpackage="com.fasterxml.jackson"/>
+            </dependency>
+            
+            <dependency path="${basedir}/aws-java-sdk-kms_" generate="true">
+                <ignore parentpackage="org.apache.http"/>
+                <ignore parentpackage="com.fasterxml.jackson"/>
+            </dependency>
+            
+            <dependency path="${basedir}/aws-java-sdk-s3_" generate="true">
+                <ignore parentpackage="org.apache.http"/>
+                <ignore parentpackage="com.fasterxml.jackson"/>
+            </dependency>
+            
+            <dependency path="${basedir}/jmespath-java_" generate="true">
+                <ignore parentpackage="org.apache.http"/>
+                <ignore parentpackage="com.fasterxml.jackson"/>
+            </dependency>
 
             <!--We have to exclude some packages in here, tomcat complains-->
             <dependency path="${basedir}/tika-app_" generate="true" renameservices="true">
