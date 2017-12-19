@@ -120,6 +120,7 @@
                 <ignore parentpackage="org.apache.commons.logging"/>
                 <ignore parentpackage="org.slf4j"/>
                 <ignore parentpackage="license"/>
+                <ignore parentpackage="schemaorg_apache_xmlbeans"/>
             </dependency>
 
     		<!--We have to exclude some packages in here in order to be able to import report designs, that excluded package must be visible-->
