@@ -65,7 +65,6 @@
                 <exclude name="myspell_*"/>
                 <exclude name="xpp3-min_*"/>
                 <exclude name="jaxen_*"/>
-                <exclude name="tika-app_*"/>
                 <exclude name="jasperreports_*"/>
                 <exclude name="felix_*"/>
                 <exclude name="lesscss_*"/>
@@ -112,15 +111,6 @@
             <dependency path="${basedir}/jmespath-java_" generate="true">
                 <ignore parentpackage="org.apache.http"/>
                 <ignore parentpackage="com.fasterxml.jackson"/>
-            </dependency>
-
-            <!--We have to exclude some packages in here, tomcat complains-->
-            <dependency path="${basedir}/tika-app_" generate="true" renameservices="true">
-                <customZap pattern="org.apache.log4j.**"/>
-                <ignore parentpackage="org.apache.commons.logging"/>
-                <ignore parentpackage="org.slf4j"/>
-                <ignore parentpackage="license"/>
-                <ignore parentpackage="schemaorg_apache_xmlbeans"/>
             </dependency>
 
     		<!--We have to exclude some packages in here in order to be able to import report designs, that excluded package must be visible-->
@@ -175,10 +165,7 @@
             <namingrule pattern="xpp3" replacement="xmlpull"/>
             <namingrule pattern="xmlpull" replacement="xmlpull"/>
             <namingrule pattern="json" replacement="json"/>
-            <namingrule pattern="commons-jci" replacement="commons_jci"/>
-            <namingrule pattern="xalan" replacement="tika_app"/>
-            <namingrule pattern="tika" replacement="tika_app"/>
-            <namingrule pattern="nekohtml" replacement="tika_app"/>-->
+            <namingrule pattern="commons-jci" replacement="commons_jci"/>-->
 
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--++++++++++++++Resources+++++++++++++++-->
