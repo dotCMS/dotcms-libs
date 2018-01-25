@@ -113,6 +113,19 @@
                 <ignore parentpackage="com.fasterxml.jackson"/>
             </dependency>
 
+            <dependency path="${basedir}/log4j-api_" generate="true">
+                <ignore parentpackage="org.w3c.dom"/>
+            </dependency>
+            <dependency path="${basedir}/log4j-core_" generate="true">
+                <ignore parentpackage="org.w3c.dom"/>
+            </dependency>
+            <dependency path="${basedir}/log4j-jcl_" generate="true">
+                <ignore parentpackage="org.w3c.dom"/>
+            </dependency>
+            <dependency path="${basedir}/log4j-web_" generate="true">
+                <ignore parentpackage="org.w3c.dom"/>
+            </dependency>
+
     		<!--We have to exclude some packages in here in order to be able to import report designs, that excluded package must be visible-->
     		<dependency path="${basedir}/jasperreports_" generate="true" renameservices="true">
     		    <ignore parentpackage="net.sf.jasperreports"/>
