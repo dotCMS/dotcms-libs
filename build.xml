@@ -142,10 +142,42 @@
                 <prefix name="Packages." strict="false"/>
             </dependency>
 
+            <!-- We need it to use elastic outside dotCMS -->
             <dependency path="${basedir}/elasticsearch_" generate="true" renameservices="true">
-                <extraRule pattern="org.elasticsearch" result="com.dotcms.repackage.org.elasticsearch"/>
+                <ignore parentpackage="org.apache.lucene"/>
+                <ignore parentpackage="org.elasticsearch"/>
             </dependency>
-        	
+            <dependency path="${basedir}/lucene-analyzers-common_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-core_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-highlighter_" generate="true" renameservices="true">
+                    <ignore parentpackage="org.apache.lucene"/>
+                </dependency>
+            <dependency path="${basedir}/lucene-expressions_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-join_" generate="true" renameservices="true">
+                    <ignore parentpackage="org.apache.lucene"/>
+                </dependency>
+            <dependency path="${basedir}/lucene-memory_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-queries_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-queryparser_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-sandbox_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-suggest_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+
         	<dependency path="${basedir}/bsh_" generate="true">
 	            <extraRule pattern="bsh.args" result="bsh.args"/>
 	        	<extraRule pattern="bsh.system" result="bsh.system"/>

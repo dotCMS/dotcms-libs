@@ -62,4 +62,4 @@ The **build.gradle** before upload the jar will verify if it was already uploade
  * build.gradle -> Line 10: ext.username = 'user.name'
  * build.gradle -> Line 11: ext.password = 'XYZ'
   
-* run: `gradle uploadArchives` 
+* run: `./gradlew uploadArchives` 
