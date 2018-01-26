@@ -62,6 +62,7 @@
                 <!--dotcms jars-->
 
                 <!--We CAN repackage them but applying special rules-->
+                <exclude name="daisydiff_*"/>
                 <exclude name="myspell_*"/>
                 <exclude name="xpp3-min_*"/>
                 <exclude name="jaxen_*"/>
@@ -84,7 +85,10 @@
             <!--We can repackage them but not rename their services files-->
             <dependency path="${basedir}/xpp3-min_" generate="true"/>
             <dependency path="${basedir}/jaxen_" generate="true">
-                <ignore parentpackage="org.w3c_"/><!--Contains just ONE class and it is a common package, using it as a rule breaks the code-->
+                <ignore parentpackage="org.w3c"/><!--Contains just ONE class and it is a common package, using it as a rule breaks the code-->
+            </dependency>
+            <dependency path="${basedir}/daisydiff_" generate="true">
+                <ignore parentpackage="org.w3c"/>
             </dependency>
             <!--We can repackage them but not rename their services files-->
 
@@ -205,10 +209,7 @@
             <!--<namingrule pattern="jersey" replacement="jersey"/>
             <namingrule pattern="lucene" replacement="elasticsearch"/>
             <namingrule pattern="elasticsearch" replacement="elasticsearch"/>
-            <namingrule pattern="sslext" replacement="struts"/>
             <namingrule pattern="milton" replacement="milton"/>
-            <namingrule pattern="xpp3" replacement="xmlpull"/>
-            <namingrule pattern="xmlpull" replacement="xmlpull"/>
             <namingrule pattern="json" replacement="json"/>
             <namingrule pattern="commons-jci" replacement="commons_jci"/>-->
 
