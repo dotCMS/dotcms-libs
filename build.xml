@@ -62,10 +62,10 @@
                 <!--dotcms jars-->
 
                 <!--We CAN repackage them but applying special rules-->
+                <exclude name="daisydiff_*"/>
                 <exclude name="myspell_*"/>
                 <exclude name="xpp3-min_*"/>
                 <exclude name="jaxen_*"/>
-                <exclude name="tika-app_*"/>
                 <exclude name="jasperreports_*"/>
                 <exclude name="felix_*"/>
                 <exclude name="lesscss_*"/>
@@ -85,7 +85,10 @@
             <!--We can repackage them but not rename their services files-->
             <dependency path="${basedir}/xpp3-min_" generate="true"/>
             <dependency path="${basedir}/jaxen_" generate="true">
-                <ignore parentpackage="org.w3c_"/><!--Contains just ONE class and it is a common package, using it as a rule breaks the code-->
+                <ignore parentpackage="org.w3c"/><!--Contains just ONE class and it is a common package, using it as a rule breaks the code-->
+            </dependency>
+            <dependency path="${basedir}/daisydiff_" generate="true">
+                <ignore parentpackage="org.w3c"/>
             </dependency>
             <!--We can repackage them but not rename their services files-->
 
@@ -114,13 +117,17 @@
                 <ignore parentpackage="com.fasterxml.jackson"/>
             </dependency>
 
-            <!--We have to exclude some packages in here, tomcat complains-->
-            <dependency path="${basedir}/tika-app_" generate="true" renameservices="true">
-                <customZap pattern="org.apache.log4j.**"/>
-                <ignore parentpackage="org.apache.commons.logging"/>
-                <ignore parentpackage="org.slf4j"/>
-                <ignore parentpackage="license"/>
-                <ignore parentpackage="schemaorg_apache_xmlbeans"/>
+            <dependency path="${basedir}/log4j-api_" generate="true">
+                <ignore parentpackage="org.w3c.dom"/>
+            </dependency>
+            <dependency path="${basedir}/log4j-core_" generate="true">
+                <ignore parentpackage="org.w3c.dom"/>
+            </dependency>
+            <dependency path="${basedir}/log4j-jcl_" generate="true">
+                <ignore parentpackage="org.w3c.dom"/>
+            </dependency>
+            <dependency path="${basedir}/log4j-web_" generate="true">
+                <ignore parentpackage="org.w3c.dom"/>
             </dependency>
 
     		<!--We have to exclude some packages in here in order to be able to import report designs, that excluded package must be visible-->
@@ -139,10 +146,42 @@
                 <prefix name="Packages." strict="false"/>
             </dependency>
 
+            <!-- We need it to use elastic outside dotCMS -->
             <dependency path="${basedir}/elasticsearch_" generate="true" renameservices="true">
-                <extraRule pattern="org.elasticsearch" result="com.dotcms.repackage.org.elasticsearch"/>
+                <ignore parentpackage="org.apache.lucene"/>
+                <ignore parentpackage="org.elasticsearch"/>
             </dependency>
-        	
+            <dependency path="${basedir}/lucene-analyzers-common_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-core_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-highlighter_" generate="true" renameservices="true">
+                    <ignore parentpackage="org.apache.lucene"/>
+                </dependency>
+            <dependency path="${basedir}/lucene-expressions_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-join_" generate="true" renameservices="true">
+                    <ignore parentpackage="org.apache.lucene"/>
+                </dependency>
+            <dependency path="${basedir}/lucene-memory_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-queries_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-queryparser_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-sandbox_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+            <dependency path="${basedir}/lucene-suggest_" generate="true" renameservices="true">
+                <ignore parentpackage="org.apache.lucene"/>
+            </dependency>
+
         	<dependency path="${basedir}/bsh_" generate="true">
 	            <extraRule pattern="bsh.args" result="bsh.args"/>
 	        	<extraRule pattern="bsh.system" result="bsh.system"/>
@@ -170,15 +209,9 @@
             <!--<namingrule pattern="jersey" replacement="jersey"/>
             <namingrule pattern="lucene" replacement="elasticsearch"/>
             <namingrule pattern="elasticsearch" replacement="elasticsearch"/>
-            <namingrule pattern="sslext" replacement="struts"/>
             <namingrule pattern="milton" replacement="milton"/>
-            <namingrule pattern="xpp3" replacement="xmlpull"/>
-            <namingrule pattern="xmlpull" replacement="xmlpull"/>
             <namingrule pattern="json" replacement="json"/>
-            <namingrule pattern="commons-jci" replacement="commons_jci"/>
-            <namingrule pattern="xalan" replacement="tika_app"/>
-            <namingrule pattern="tika" replacement="tika_app"/>
-            <namingrule pattern="nekohtml" replacement="tika_app"/>-->
+            <namingrule pattern="commons-jci" replacement="commons_jci"/>-->
 
             <!--++++++++++++++++++++++++++++++++++++++-->
             <!--++++++++++++++Resources+++++++++++++++-->
